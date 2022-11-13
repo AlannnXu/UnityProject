@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+    [SerializeField] private Collider2D groundChecker;
     private Rigidbody2D rb;
     private Collider2D coll;
 
@@ -14,7 +15,7 @@ public class Player : MonoBehaviour
     float xVelocity;
 
     [Header("跳跃参数")]
-    public float jumpForce = 6f;
+    public float jumpForce = 3f;
 
     int jumpCount;//跳跃次数
 
