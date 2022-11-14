@@ -6,16 +6,21 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField] private Transform groundCheck;
+    [SerializeField] private Transform shieldPrefab;
     private Rigidbody2D rb;
     private Collider2D coll;
 
     [Header("移动参数")]
-    public float speed = 8f;
+    public float speed = 5f;
 
     float xVelocity;
 
+
+    [Header("投掷参数")]
+    public float throwForce = 4f;
+
     [Header("跳跃参数")]
-    public float jumpForce = 3f;
+    public float jumpForce = 4f;
 
     int jumpCount;//跳跃次数
 
@@ -40,6 +45,11 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump") && jumpCount > 0)
         {
             jumpPress = true;
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            DestroyImmediate(transform.GetChild(0).gameObject);
+            Instantiate(shieldPrefab, transform.position, transform.rotation); 
         }
     }
 
