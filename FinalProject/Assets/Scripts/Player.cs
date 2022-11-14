@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    [SerializeField] private Collider2D groundChecker;
+    [SerializeField] private Transform groundCheck;
     private Rigidbody2D rb;
     private Collider2D coll;
 
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
     void isOnGroundCheck()
     {
         ////判断角色碰撞器与地面图层发生接触
-        if (coll.IsTouchingLayers(groundLayer))
+        if (Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer)) 
         {
             isOnGround = true;
         }
