@@ -32,6 +32,33 @@ public class PanelManager : MonoBehaviour
         }
     }
 
+    public GameObject OpenPanel(string panelName)
+    {
+        foreach (Transform item in panels)
+        {
+            if(item.name == panelName)
+            {
+                GameObject go = item.gameObject;
+                go.SetActive(true);
+                return go;
+            }
+        }
+        return null;
+    }
+
+    public void  ClosePanel(string panelName)
+    {
+        foreach (Transform item in panels)
+        {
+            if (item.name == panelName)
+            {
+                GameObject go = item.gameObject;
+                go.SetActive(false);
+                return;
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
