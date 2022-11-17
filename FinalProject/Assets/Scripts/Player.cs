@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform shieldPrefab;
+
     private Rigidbody2D rb;
     private Collider2D coll;
 
@@ -32,6 +33,8 @@ public class Player : MonoBehaviour
 
     //按键设置
     bool jumpPress;
+    bool shieldPress;
+    bool shieldOut;
 
     void Start()
     {
@@ -48,8 +51,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W))
         {
-            DestroyImmediate(transform.GetChild(0).gameObject);
-            Instantiate(shieldPrefab, transform.position, transform.rotation); 
+            shieldPress = true;
         }
     }
 
@@ -58,6 +60,32 @@ public class Player : MonoBehaviour
         isOnGroundCheck();
         Move();
         Jump();
+        shieldDetect();
+    }
+
+    void shieldDetect()
+    {
+        if (shieldPress)
+        {
+            if (!shieldOut)
+            {
+                GameObject outShield = GameObject.FindWithTag("shield");
+                outShield.transform.parent = null;
+                outShield.AddComponent<Rigidbody2D>();
+                outShield.GetComponent<Rigidbody2D>().AddForce(new Vector2(5f, 0f));
+                shieldOut = true;
+            }
+            else
+            {
+
+                GameObject outShield = GameObject.FindWithTag("shield");
+                outShield.transform.parent = transform;
+                outShield.transform.position = transform.position + new Vector3(0.18f, 0, 0);
+                Destroy(outShield.GetComponent<Rigidbody2D>());
+                shieldOut = false;
+            }
+            shieldPress = false;
+        }
     }
 
     void isOnGroundCheck()
