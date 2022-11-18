@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
         {
             jumpPress = true;
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             shieldPress = true;
         }
@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
                 GameObject outShield = GameObject.FindWithTag("shield");
                 outShield.transform.parent = null;
                 outShield.AddComponent<Rigidbody2D>();
-                outShield.GetComponent<Rigidbody2D>().AddForce(new Vector2(5f, 0f));
+                outShield.GetComponent<Rigidbody2D>().AddForce(new Vector2(200f, 0f));
                 shieldOut = true;
             }
             else
