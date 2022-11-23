@@ -116,7 +116,7 @@ public class Player : MonoBehaviour
         //镜面翻转
         if (xVelocity != 0)
         {
-            transform.localScale = new Vector3(xVelocity, 1, 1);
+            transform.localScale = new Vector3(1.0f * xVelocity, 1.0f, 1);
         }
     }
 
