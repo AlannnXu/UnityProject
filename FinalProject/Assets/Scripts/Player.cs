@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
 
     float xVelocity;
 
+    [Header("人物形态")]
+    [SerializeField] bool haveShield;
 
     [Header("投掷参数")]
     public float throwForce = 4f;
@@ -60,7 +62,11 @@ public class Player : MonoBehaviour
         isOnGroundCheck();
         Move();
         Jump();
-        shieldDetect();
+        if (haveShield)
+        {
+            shieldDetect();
+        }
+        
     }
 
     void shieldDetect()
@@ -110,7 +116,7 @@ public class Player : MonoBehaviour
         //镜面翻转
         if (xVelocity != 0)
         {
-            transform.localScale = new Vector3(0.4f * xVelocity, 1, 1);
+            transform.localScale = new Vector3(xVelocity, 1, 1);
         }
     }
 
