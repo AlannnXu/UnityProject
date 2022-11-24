@@ -746,7 +746,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 17
-      m_TileSpriteIndex: 17
+      m_TileSpriteIndex: 18
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -887,11 +887,11 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -1490169433158014901, guid: 671b7a74b8674f640904585a5b02cb21,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 44
     m_Data:
@@ -6296,6 +6296,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!95 &1515652709 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6372500861312323091, guid: 9810341a0f361234ebabf046da8d85a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2073798425}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1623207892
 GameObject:
   m_ObjectHideFlags: 0
@@ -6583,6 +6589,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2073798427, guid: 9810341a0f361234ebabf046da8d85a2, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1515652709}
     - target: {fileID: 4176865844960910987, guid: 9810341a0f361234ebabf046da8d85a2,
         type: 3}
       propertyPath: m_Name

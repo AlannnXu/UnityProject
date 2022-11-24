@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform shieldPrefab;
-
+    public Animator animator;
     private Rigidbody2D rb;
     private Collider2D coll;
 
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 
     [Header("状态")]
     public bool isOnGround;
-
+    private bool isRunning = false;
     [Header("环境检测")]
     public LayerMask groundLayer;
 
@@ -111,12 +111,33 @@ public class Player : MonoBehaviour
     {
         xVelocity = Input.GetAxisRaw("Horizontal");
 
+        if(xVelocity != 0)
+        {
+            if(isRunning == false)
+            {
+                isRunning = true;
+                animator.Play("1_Run");
+                animator.Update(0);
+                Debug.Log("跑");
+            }
+        }
+        else if(xVelocity == 0)
+        {
+            if (isRunning == true)
+            {
+                isRunning = false;
+                animator.Play("0_idle");
+                animator.Update(0);
+                Debug.Log("停");
+            }
+        }
+
         rb.velocity = new Vector2(xVelocity * speed, rb.velocity.y);
 
         //镜面翻转
         if (xVelocity != 0)
         {
-            transform.localScale = new Vector3(1.0f * xVelocity, 1.0f, 1);
+            transform.localScale = new Vector3(1.0f * (-xVelocity), 1.0f, 1);
         }
     }
 
