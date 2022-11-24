@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     [Header("跳跃参数")]
     public float jumpForce = 4f;
 
-    int jumpCount;//跳跃次数
+    public int jumpCount;//跳跃次数
 
     [Header("状态")]
     public bool isOnGround;
@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
     void isOnGroundCheck()
     {
         ////判断角色碰撞器与地面图层发生接触
-        if (Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer)) 
+        if (Physics2D.OverlapCircle(groundCheck.position, 1f, groundLayer)) 
         {
             isOnGround = true;
         }
@@ -111,26 +111,7 @@ public class Player : MonoBehaviour
     {
         xVelocity = Input.GetAxisRaw("Horizontal");
 
-        if(xVelocity != 0)
-        {
-            if(isRunning == false)
-            {
-                isRunning = true;
-                animator.Play("1_Run");
-                animator.Update(0);
-                Debug.Log("跑");
-            }
-        }
-        else if(xVelocity == 0)
-        {
-            if (isRunning == true)
-            {
-                isRunning = false;
-                animator.Play("0_idle");
-                animator.Update(0);
-                Debug.Log("停");
-            }
-        }
+        
 
         rb.velocity = new Vector2(xVelocity * speed, rb.velocity.y);
 
