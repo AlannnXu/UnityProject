@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
     void isOnGroundCheck()
     {
         ////判断角色碰撞器与地面图层发生接触
-        if (Physics2D.OverlapCircle(groundCheck.position, 1f, groundLayer)) 
+        if (Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer)) 
         {
             isOnGround = true;
         }

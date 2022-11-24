@@ -37,16 +37,14 @@ public class AnimationControl : MonoBehaviour
                     isJumping = true;
                 }
             }
-        }else if(Input.GetKeyDown(KeyCode.A) && isRunning == 0)
+        }else if((Input.GetKeyDown(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) && isRunning == 0)
         {
             animator.SetBool("IdleToRun", true);
-            //animator.Update(0.29f);
             isIdle=false;
             isRunning = 1;
-        }else if (Input.GetKeyDown(KeyCode.D) && isRunning == 0)
+        }else if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyUp(KeyCode.A)) && isRunning == 0)
         {
             animator.SetBool("IdleToRun", true);
-            //animator.Update(0.29f);
             isIdle = false;
             isRunning = 2;
         }
@@ -60,16 +58,19 @@ public class AnimationControl : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.A)&& isRunning == 1)
         {
             animator.SetBool("IdleToRun", false);
-            //animator.Update(0.19f);
             isIdle = true;
             isRunning = 0;
         }else if(Input.GetKeyUp(KeyCode.D) && isRunning == 2)
         {
             animator.SetBool("IdleToRun", false);
-            //animator.Update(0.19f);
             isIdle = true;
             isRunning = 0;
-        }else if(isJumping == true && player.isOnGround)
+        }else if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+        {
+            isIdle = true;
+            isRunning = 0;
+        }     
+        else if(isJumping == true && player.isOnGround)
         {
             animator.SetBool("IdleToJump",false);
             animator.SetBool("RunToJump", false);
