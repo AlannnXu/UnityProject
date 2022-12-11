@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1269937436630808348}
   - component: {fileID: 1269937436630808349}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: MainLevBuild_341
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1269937436768131244}
   - component: {fileID: 1269937436768131247}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: MainLevBuild_341 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 7677298970134595979}
   - component: {fileID: 5007967911433608671}
   - component: {fileID: 5495269839491763075}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: platform
   m_TagString: platform
   m_Icon: {fileID: 0}
