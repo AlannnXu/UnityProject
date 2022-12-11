@@ -6,6 +6,9 @@ TagManager:
   tags:
   - shield
   - platform
+  - EnemyHead
+  - EnemyBody
+  - Enemy
   layers:
   - Default
   - TransparentFX

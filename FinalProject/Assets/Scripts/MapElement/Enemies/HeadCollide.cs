@@ -18,12 +18,13 @@ public class HeadCollide : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)//接触时触发，无需调用
-    {
-        Debug.Log(Time.time + ":进入该触发器的对象是：" + other.gameObject.name);
-        if (other.gameObject.tag == "Player") {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        }
+    // void OnTriggerEnter2D(Collider2D other)//接触时触发，无需调用
+    // {
+    //     Debug.Log(Time.time + ":进入该触发器的对象是：" + other.gameObject.name);
+    //     if (other.gameObject.tag == "Player") {
+    //         Debug.Log(Time.time + "tag没毛病");
+    //         rb.AddForce(transform.up * jumpForce);
+    //     }
         
-    }
+    // }
 }

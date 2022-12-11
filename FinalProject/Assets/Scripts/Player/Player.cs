@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
+        shieldPrefab.GetComponent<Collider2D>().enabled = false;
     }
 
 
@@ -143,6 +144,17 @@ public class Player : MonoBehaviour
             jumpCount--;
             jumpPress = false;
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)//接触时触发，无需调用
+    {
+        Debug.Log(Time.time + ":进入该触发器的对象是：" + other.gameObject.name);
+        if (other.gameObject.tag == "EnemyHead") {
+            Debug.Log(Time.time + "tag没毛病");
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            Destroy(other.gameObject);
+        }
+        
     }
 }
 
