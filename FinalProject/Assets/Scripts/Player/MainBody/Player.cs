@@ -92,7 +92,12 @@ public class Player : MonoBehaviour
                 GameObject outShield = GameObject.FindWithTag("shield");
                 outShield.transform.parent = null;
                 outShield.AddComponent<Rigidbody2D>();
-                outShield.GetComponent<Rigidbody2D>().velocity = new Vector2(throwForce,outShield.GetComponent<Rigidbody2D>().velocity.y);
+                if (transform.localScale.x > 0) {
+                    outShield.GetComponent<Rigidbody2D>().velocity = new Vector2(-throwForce,outShield.GetComponent<Rigidbody2D>().velocity.y);
+                } else {
+                    outShield.GetComponent<Rigidbody2D>().velocity = new Vector2(throwForce,outShield.GetComponent<Rigidbody2D>().velocity.y);
+                }
+                
                 outShield.GetComponent<Collider2D>().enabled = true;
                 outShield.GetComponent<Collider2D>().isTrigger = true;
                 // shieldOut = true;
@@ -187,6 +192,7 @@ public class Player : MonoBehaviour
             Debug.Log("ggd");
             other.transform.parent = rightHandPrefab;
             other.transform.localPosition = Vector3.zero;
+            other.transform.localRotation = Quaternion.identity;
             Destroy(other.transform.GetComponent<Rigidbody2D>());
             other.transform.GetComponent<Collider2D>().enabled = false;
             shieldOut = false;
