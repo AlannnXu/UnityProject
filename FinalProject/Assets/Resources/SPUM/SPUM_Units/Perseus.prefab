@@ -1708,7 +1708,7 @@ GameObject:
   - component: {fileID: 2956229038549297154}
   m_Layer: 0
   m_Name: Perseus
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3151,7 +3151,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: a232bd9c34808eb43bdb91fd1f471481, type: 3}
-  m_Color: {r: 0.85882354, g: 0.85882354, b: 0.85882354, a: 1}
+  m_Color: {r: 0.8773585, g: 0.70833516, b: 0.34763262, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
