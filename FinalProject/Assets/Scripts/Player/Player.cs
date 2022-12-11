@@ -152,7 +152,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "EnemyHead") {
             Debug.Log(Time.time + "tag没毛病");
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            Destroy(other.gameObject);
+            Destroy(other.transform.parent.gameObject);
         }
         
     }
