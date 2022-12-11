@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform shieldPrefab;
+    [SerializeField] private Transform rightHandPrefab;
     public Animator animator;
     private Rigidbody2D rb;
     private Collider2D coll;
@@ -18,10 +19,17 @@ public class Player : MonoBehaviour
     float xVelocity;
 
     [Header("人物形态")]
-    [SerializeField] bool haveShield;
+    [SerializeField] bool haveShield = true;
+
+    // 0-normal person;
+    // 1-with shield;
+    // 2-have time slower;
+    // 3-exploding flash;
+    public int status = 1;
 
     [Header("投掷参数")]
     public float throwForce = 4f;
+    [SerializeField] bool shieldOut;
 
     [Header("跳跃参数")]
     public float jumpForce = 4f;
@@ -37,13 +45,14 @@ public class Player : MonoBehaviour
     //按键设置
     bool jumpPress;
     bool shieldPress;
-    bool shieldOut;
+    
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         shieldPrefab.GetComponent<Collider2D>().enabled = false;
+        haveShield = true;
     }
 
 
@@ -53,7 +62,7 @@ public class Player : MonoBehaviour
         {
             jumpPress = true;
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             shieldPress = true;
         }
@@ -67,6 +76,8 @@ public class Player : MonoBehaviour
         if (haveShield)
         {
             shieldDetect();
+        } else {
+            isShieldOnGroundCheck();
         }
         
     }
@@ -77,21 +88,25 @@ public class Player : MonoBehaviour
         {
             if (!shieldOut)
             {
+                haveShield = false;
                 GameObject outShield = GameObject.FindWithTag("shield");
                 outShield.transform.parent = null;
                 outShield.AddComponent<Rigidbody2D>();
-                outShield.GetComponent<Rigidbody2D>().AddForce(new Vector2(200f, 0f));
-                shieldOut = true;
+                outShield.GetComponent<Rigidbody2D>().velocity = new Vector2(throwForce,outShield.GetComponent<Rigidbody2D>().velocity.y);
+                outShield.GetComponent<Collider2D>().enabled = true;
+                outShield.GetComponent<Collider2D>().isTrigger = true;
+                // shieldOut = true;
             }
-            else
-            {
-
-                GameObject outShield = GameObject.FindWithTag("shield");
-                outShield.transform.parent = transform;
-                outShield.transform.position = transform.position + new Vector3(0.18f, 0, 0);
-                Destroy(outShield.GetComponent<Rigidbody2D>());
-                shieldOut = false;
-            }
+            // else
+            // {
+            //     haveShield = true;
+            //     GameObject outShield = GameObject.FindWithTag("shield");
+            //     outShield.transform.parent = rightHandPrefab;
+            //     outShield.transform.localPosition = Vector3.zero;
+            //     Destroy(outShield.GetComponent<Rigidbody2D>());
+            //     outShield.GetComponent<Collider2D>().enabled = false;
+            //     shieldOut = false;
+            // }
             shieldPress = false;
         }
     }
@@ -107,6 +122,26 @@ public class Player : MonoBehaviour
         {
             isOnGround = false;
         }
+
+   
+    }
+
+    void isShieldOnGroundCheck()
+    {
+        ////判断盾牌碰撞器与地面图层发生接触
+        GameObject outShield = GameObject.FindWithTag("shield");
+        if (Physics2D.OverlapCircle(outShield.transform.position, 1f, groundLayer)) 
+        {
+            shieldOut = true;
+            Debug.Log("sss");
+            outShield.GetComponent<Collider2D>().isTrigger = false;
+        }
+        // else
+        // {
+        //     shieldOut = false;
+        // }     
+
+   
     }
 
     void Move()
@@ -147,16 +182,42 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (shieldOut && other.gameObject.tag == "shield") {
+            Debug.Log("ggd");
+            other.transform.parent = rightHandPrefab;
+            other.transform.localPosition = Vector3.zero;
+            Destroy(other.transform.GetComponent<Rigidbody2D>());
+            other.transform.GetComponent<Collider2D>().enabled = false;
+            shieldOut = false;
+            haveShield = true;
+        }        
+    }
+
     void OnTriggerEnter2D(Collider2D other)//接触时触发，无需调用
     {
         Debug.Log(Time.time + ":进入该触发器的对象是：" + other.gameObject.name);
-        if (other.gameObject.tag == "EnemyHead") {
-            Debug.Log(Time.time + "tag没毛病");
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            Destroy(other.transform.parent.gameObject);
-        } else if (other.gameObject.tag == "EnemyBody") {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // if (shieldOut && other.gameObject.tag == "shield") {
+        //     other.transform.parent = rightHandPrefab;
+        //     other.transform.localPosition = Vector3.zero;
+        //     Destroy(other.GetComponent<Rigidbody2D>());
+        //     other.GetComponent<Collider2D>().enabled = false;
+        //     shieldOut = false;
+        // }
+        switch (other.gameObject.tag) {
+            case "EnemyHead":
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                Destroy(other.transform.parent.gameObject);
+                break;
+            case "EnemyBody":
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                break;
+            // case "shield":
+            //     other.transform.parent = transform;
+
+            //     break;
         }
+
         
     }
 }
