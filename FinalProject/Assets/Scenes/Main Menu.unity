@@ -1321,6 +1321,7 @@ GameObject:
   - component: {fileID: 1823089317}
   - component: {fileID: 1823089316}
   - component: {fileID: 1823089315}
+  - component: {fileID: 1823089318}
   m_Layer: 5
   m_Name: NewButton
   m_TagString: Untagged
@@ -1390,7 +1391,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1823089316}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1823089318}
+        m_MethodName: Switch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1823089316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1404,7 +1416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1428,6 +1440,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823089313}
   m_CullTransparentMesh: 0
+--- !u!114 &1823089318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823089313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73405cd2e2bd1f84ba0a4c34d835f867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2090538657
 GameObject:
   m_ObjectHideFlags: 0
