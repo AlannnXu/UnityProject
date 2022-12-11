@@ -10804,7 +10804,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085223017}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.99562, y: -4.5957694, z: -9.88}
+  m_LocalPosition: {x: -22.069118, y: -4.6085577, z: -9.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 949670412}
@@ -11448,6 +11448,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PerseusA
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
+        type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 2304
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8143030f543438b46840d25e1ae7e739, type: 3}
