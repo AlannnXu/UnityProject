@@ -53,6 +53,9 @@ public class Player : MonoBehaviour
         coll = GetComponent<Collider2D>();
         shieldPrefab.GetComponent<Collider2D>().enabled = false;
         haveShield = true;
+        animator.Update(0f);
+        animator.Play("0_idle");
+        
     }
 
 
