@@ -203,28 +203,25 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)//接触时触发，无需调用
     {
         Debug.Log(Time.time + ":进入该触发器的对象是：" + other.gameObject.name);
-        // if (shieldOut && other.gameObject.tag == "shield") {
-        //     other.transform.parent = rightHandPrefab;
-        //     other.transform.localPosition = Vector3.zero;
-        //     Destroy(other.GetComponent<Rigidbody2D>());
-        //     other.GetComponent<Collider2D>().enabled = false;
-        //     shieldOut = false;
-        // }
+
         switch (other.gameObject.tag) {
             case "EnemyHead":
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 Destroy(other.transform.parent.gameObject);
                 break;
             case "EnemyBody":
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                PlayerDeath();
                 break;
-            // case "shield":
-            //     other.transform.parent = transform;
-
-            //     break;
+            case "hazard":
+                PlayerDeath();
+                break;
         }
 
         
+    }
+
+    public void PlayerDeath() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
 
