@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -153,6 +154,8 @@ public class Player : MonoBehaviour
             Debug.Log(Time.time + "tag没毛病");
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             Destroy(other.transform.parent.gameObject);
+        } else if (other.gameObject.tag == "EnemyBody") {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         
     }
