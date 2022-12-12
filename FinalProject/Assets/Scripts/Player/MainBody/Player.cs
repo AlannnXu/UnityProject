@@ -33,7 +33,8 @@ public class Player : MonoBehaviour
     [SerializeField] bool shieldOut;
 
     [Header("跳跃参数")]
-    public float jumpForce = 4f;
+    public float jumpForce = 6f;
+    public float superJumpForce = 8f;
 
     public int jumpCount;//跳跃次数
 
@@ -213,7 +214,7 @@ public class Player : MonoBehaviour
 
         switch (other.gameObject.tag) {
             case "EnemyHead":
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                rb.velocity = new Vector2(rb.velocity.x, superJumpForce);
                 Destroy(other.transform.parent.gameObject);
                 break;
             case "EnemyBody":
