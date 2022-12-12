@@ -365,6 +365,24 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: IdleToDeath
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: RunToDeath
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: JumpToDeath
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -407,7 +425,7 @@ AnimatorStateMachine:
     m_Position: {x: 700, y: -380, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8168001613786994530}
-    m_Position: {x: 910, y: -380, z: 0}
+    m_Position: {x: 330, y: -780, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1802906157903142779}
     m_Position: {x: 1120, y: -380, z: 0}
