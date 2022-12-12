@@ -142,7 +142,7 @@ public class Player : MonoBehaviour
         if (Physics2D.OverlapCircle(outShield.transform.position, 1f, groundLayer)) 
         {
             shieldOut = true;
-            Debug.Log("sss");
+
             outShield.GetComponent<Collider2D>().isTrigger = false;
         }
         // else

@@ -13,7 +13,7 @@ public class EnemyMove : MonoBehaviour
     //移动方向
     float dir = 1;
     Vector3 startPos;
-    Vector3 endPos;
+    public Vector3 endPos;
     Vector3 beforePos;
     Vector3 afterPos;
     //起始位置
@@ -22,6 +22,8 @@ public class EnemyMove : MonoBehaviour
 
     void Start()
     {
+        transform.localScale = new Vector3(-1.0f, 1.0f, 1);
+        dir = -1;
         start_x = transform.position.x;//水平移动的起点
         start_y = transform.position.y;//竖直移动的起点
         m_Rigidbody = GetComponent<Rigidbody2D>();
@@ -62,11 +64,13 @@ public class EnemyMove : MonoBehaviour
         // }
         if (flag) {
             
-            
-            m_Rigidbody.MovePosition(Mathf.PingPong(Time.time * speed, dis) * dir * new Vector3(1, 0, 0) + startPos);
-            if (Vector3.Distance(endPos, transform.position) < 0.01f) {
+            m_Rigidbody.MovePosition(transform.GetComponent<Rigidbody2D>().position + dir * Time.fixedDeltaTime * new Vector2(speed, 0));
+            // m_Rigidbody.MovePosition(Mathf.PingPong(Time.time * speed, dis) * dir * new Vector3(1, 0, 0) + startPos);
+            if (dir == 1 && Vector3.Distance(endPos, transform.position) < 0.01f) {
+                dir = - dir;
                 transform.localScale = new Vector3(1.0f, 1.0f, 1);
-            } else if (Vector3.Distance(transform.position, startPos) < 0.01f) {
+            } else if (dir == -1 && Vector3.Distance(transform.position, startPos) < 0.01f) {
+                dir = - dir;
                 transform.localScale = new Vector3(-1.0f, 1.0f, 1);
             }
 
@@ -81,6 +85,17 @@ public class EnemyMove : MonoBehaviour
         }
         
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.transform.tag == "shield") {
+            Debug.Log("s");
+            
+            dir = - dir;
+            transform.localScale = new Vector3(-transform.localScale.x, 1.0f, 1);
+        }         
+    }
+
+
 }
 // public class MovingPlatform : MonoBehaviour
 // {
