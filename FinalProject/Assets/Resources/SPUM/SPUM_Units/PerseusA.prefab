@@ -2258,18 +2258,20 @@ MonoBehaviour:
   groundCheck: {fileID: 3874863280458649225}
   shieldPrefab: {fileID: 2220299470861201534}
   rightHandPrefab: {fileID: 2250887623968555113}
-  animator: {fileID: 0}
+  keyNum: 0
+  animator: {fileID: 9146699619342577471}
   speed: 5
   haveShield: 1
   status: 1
   throwForce: 4
   shieldOut: 0
   jumpForce: 6
+  superJumpForce: 8
   jumpCount: 0
   isOnGround: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 2304
 --- !u!50 &7396067121628739737
 Rigidbody2D:
   serializedVersion: 4
