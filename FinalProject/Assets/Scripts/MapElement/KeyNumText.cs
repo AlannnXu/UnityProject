@@ -15,6 +15,6 @@ public class KeyNumText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = player.keyNum.ToString();
+        text.text = " * " + player.keyNum.ToString();
     }
 }
