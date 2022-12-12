@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7968530213268177332}
   m_Layer: 12
   m_Name: block door
-  m_TagString: Untagged
+  m_TagString: blockDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 6997335781439633409}
   m_Layer: 12
   m_Name: MainLevBuild_950
-  m_TagString: Untagged
+  m_TagString: blockDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 2804730431283620381}
   m_Layer: 12
   m_Name: MainLevBuild_959
-  m_TagString: Untagged
+  m_TagString: blockDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 2289213941994969492}
   m_Layer: 12
   m_Name: MainLevBuild_982
-  m_TagString: Untagged
+  m_TagString: blockDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

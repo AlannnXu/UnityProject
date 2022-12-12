@@ -9,6 +9,8 @@ TagManager:
   - EnemyHead
   - EnemyBody
   - Key
+  - hazard
+  - blockDoor
   layers:
   - Default
   - TransparentFX

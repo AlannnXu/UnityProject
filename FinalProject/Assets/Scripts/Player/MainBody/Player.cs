@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform shieldPrefab;
     [SerializeField] private Transform rightHandPrefab;
+    public int keyNum;
     public Animator animator;
     private Rigidbody2D rb;
     private Collider2D coll;
@@ -55,7 +56,7 @@ public class Player : MonoBehaviour
         haveShield = true;
         animator.Update(0f);
         animator.Play("0_idle");
-        
+        keyNum = 0;
     }
 
 
@@ -200,7 +201,10 @@ public class Player : MonoBehaviour
             other.transform.GetComponent<Collider2D>().enabled = false;
             shieldOut = false;
             haveShield = true;
-        }        
+        } else if (other.gameObject.tag == "blockDoor" && keyNum > 0) {
+            keyNum--;
+            Destroy(other.transform.parent.gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)//接触时触发，无需调用
@@ -217,6 +221,10 @@ public class Player : MonoBehaviour
                 break;
             case "hazard":
                 PlayerDeath();
+                break;
+            case "Key":
+                keyNum++;
+                Destroy(other.gameObject);
                 break;
         }
 
