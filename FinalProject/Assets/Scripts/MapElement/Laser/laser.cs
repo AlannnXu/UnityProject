@@ -15,6 +15,7 @@ public class laser : MonoBehaviour
     private float timer_laser;
 
 
+
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -52,7 +53,12 @@ public class laser : MonoBehaviour
             lineRenderer.enabled = true;
             timer_laser = lastingTime;
         }
-        Shoot();
+
+
+        if(lineRenderer.enabled == true)
+        {
+            Shoot();
+        }
     }
 
     void Shoot()
