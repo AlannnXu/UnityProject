@@ -5267,8 +5267,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dis: 3
+  groundCheck: {fileID: 1223118254570881309}
   speed: 1
   flag: 1
+  isOnGround: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
   endPos: {x: 0, y: 0, z: 0}
 --- !u!61 &1985690745286326343
 BoxCollider2D:
