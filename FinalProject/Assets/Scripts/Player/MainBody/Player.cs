@@ -232,6 +232,14 @@ public class Player : MonoBehaviour
         
     }
 
+    private void OnTriggerExit2D(Collider2D other) {
+        switch (other.gameObject.tag) {
+            case "Finish":
+                PlayerDeath();
+                break;
+        }
+    }
+
     public void PlayerDeath() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
