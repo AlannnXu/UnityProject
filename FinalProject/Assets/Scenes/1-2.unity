@@ -134,6 +134,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1214600353}
     m_Modifications:
+    - target: {fileID: 479107126708266404, guid: e6453845a143b3540935c8acf16bef01,
+        type: 3}
+      propertyPath: correspondingBlockDoor
+      value: 
+      objectReference: {fileID: 397844214}
     - target: {fileID: 6657289482119992604, guid: e6453845a143b3540935c8acf16bef01,
         type: 3}
       propertyPath: m_Name
@@ -2303,6 +2308,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1214600353}
     m_Modifications:
+    - target: {fileID: 479107126708266404, guid: e6453845a143b3540935c8acf16bef01,
+        type: 3}
+      propertyPath: correspondingBlockDoor
+      value: 
+      objectReference: {fileID: 1339920843}
     - target: {fileID: 6657289482119992604, guid: e6453845a143b3540935c8acf16bef01,
         type: 3}
       propertyPath: m_Name
@@ -11306,6 +11316,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1214600353}
     m_Modifications:
+    - target: {fileID: 479107126708266404, guid: e6453845a143b3540935c8acf16bef01,
+        type: 3}
+      propertyPath: correspondingBlockDoor
+      value: 
+      objectReference: {fileID: 586208194}
     - target: {fileID: 6657289482119992604, guid: e6453845a143b3540935c8acf16bef01,
         type: 3}
       propertyPath: m_Name

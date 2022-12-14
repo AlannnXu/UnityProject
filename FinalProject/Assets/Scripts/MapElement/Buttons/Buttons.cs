@@ -5,6 +5,7 @@ using UnityEngine;
 public class Buttons : MonoBehaviour
 {
     public Transform correspondingBlockDoor;
+    public bool isHorizontal;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +20,16 @@ public class Buttons : MonoBehaviour
 
 
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionStay2D(Collision2D other)
     {
-        
+        if (other.gameObject.tag == "Player" && other.gameObject.tag == "shield") {
+            Debug.Log("jinlaile");
+            if (isHorizontal) {
+                correspondingBlockDoor.position = new Vector3(transform.position.x, transform.position.y - 2 * Time.deltaTime, transform.position.z);
+            } else {
+                correspondingBlockDoor.position = new Vector3(transform.position.x + 2 * Time.deltaTime, transform.position.y, transform.position.z);
+            }
+
+        }
     }
 }

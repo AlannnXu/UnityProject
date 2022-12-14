@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 7067101299465802127}
   - component: {fileID: 7001529310173134774}
   - component: {fileID: 5030452163761278178}
+  - component: {fileID: 146022645709381164}
   m_Layer: 0
   m_Name: ButtonClick
   m_TagString: Untagged
@@ -248,3 +249,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.52, y: 0.69}
   m_EdgeRadius: 0
+--- !u!114 &146022645709381164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7087034107506202266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d914ada74b85874a9b85c2522c94c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correspondingBlockDoor: {fileID: 0}
+  isHorizontal: 0
