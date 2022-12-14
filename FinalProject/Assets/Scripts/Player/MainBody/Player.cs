@@ -10,7 +10,9 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform shieldPrefab;
     [SerializeField] private Transform rightHandPrefab;
 
-        // 物理材料
+    [SerializeField] private platformMove platformScript;
+
+    // 物理材料
     public PhysicsMaterial2D p1;    // 有摩擦力的
     public PhysicsMaterial2D p2;    // 无摩擦力的
     public int keyNum;
@@ -152,13 +154,7 @@ public class Player : MonoBehaviour
             shieldOut = true;
 
             outShield.GetComponent<Collider2D>().isTrigger = false;
-        }
-        // else
-        // {
-        //     shieldOut = false;
-        // }     
-
-   
+        }  
     }
 
     void Move()
@@ -212,7 +208,26 @@ public class Player : MonoBehaviour
         } else if (other.gameObject.tag == "blockDoor" && keyNum > 0) {
             keyNum--;
             Destroy(other.transform.parent.gameObject);
-        }
+        } 
+        // else if (other.gameObject.tag == "platform") {
+        //     platformScript = other.gameObject.GetComponent<platformMove>();
+        //     if (platformScript.flag) {
+        //         Debug.Log("ssdczx");
+        //         transform.position = new Vector3(transform.position.x + platformScript.directionOfPlatform * platformScript.speed * Time.deltaTime * 2f,
+        //         transform.position.y, transform.position.z);
+        //     }
+        // }
+    }
+
+    private void OnCollisionStay2D(Collision2D other) {
+        if (other.gameObject.tag == "platform") {
+            platformScript = other.gameObject.GetComponent<platformMove>();
+            if (platformScript.flag) {
+                Debug.Log("ssdczx");
+                transform.position = new Vector3(transform.position.x + platformScript.directionOfPlatform * platformScript.speed * Time.deltaTime,
+                transform.position.y, transform.position.z);
+            }
+        }        
     }
 
     void OnTriggerEnter2D(Collider2D other)//接触时触发，无需调用
