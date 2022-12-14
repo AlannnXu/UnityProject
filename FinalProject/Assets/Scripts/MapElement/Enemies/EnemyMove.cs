@@ -6,16 +6,11 @@ public class EnemyMove : MonoBehaviour
 {
     Rigidbody2D m_Rigidbody;
     public float dis;
-    [SerializeField] private Transform groundCheck;
     //移动速度
     public float speed;
     //水平移动为true 竖直移动为false
     public bool flag = true;
     //移动方向
-
-    [Header("状态")]
-    public bool isOnGround;
-    public LayerMask groundLayer;
     float dir = 1;
     Vector3 startPos;
     public Vector3 endPos;
@@ -41,25 +36,34 @@ public class EnemyMove : MonoBehaviour
        
     }
 
-    void isOnGroundCheck()
-    {
-        ////判断角色碰撞器与地面图层发生接触
-        if (Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer)) 
-        {
-            isOnGround = true;
-        }
-        else
-        {
-            isOnGround = false;
-        }
-
-   
-    }
+    // public void Move()
+    // {
+    //     //移动
+    //     //竖直移动
+    //     if (flag)
+    //     {
+    //         transform.Translate(Vector2.right * dir * speed * Time.deltaTime);
+    //         if (System.Math.Abs(transform.position.x - start_x) <= 0.1f || System.Math.Abs(transform.position.x - start_x) >= dis) { dir = -dir; }
+    //     }
+    //     //水平移动
+    //     else {
+    //         transform.Translate(Vector2.up * dir * speed * Time.deltaTime);
+    //         if (System.Math.Abs(transform.position.y - start_y) <= 0.1f || System.Math.Abs(transform.position.y - start_y) >= dis) { dir = -dir; }
+    //     }
+    // }
 
     private void FixedUpdate() {
-        
+        // if (flag) {
+        //     m_Rigidbody.MovePosition(transform.position + Vector3.right * dir * speed * Time.deltaTime);
+        // } else {
+        //     m_Rigidbody.MovePosition(transform.position + Vector3.up * dir * speed * Time.deltaTime);
+        // }
+
+        // if (flag) {
+        //     m_Rigidbody.MovePosition(Mathf.PingPong(Time.time * speed, ))
+        // }
         if (flag) {
-            isOnGroundCheck();
+            
             m_Rigidbody.MovePosition(transform.GetComponent<Rigidbody2D>().position + dir * Time.fixedDeltaTime * new Vector2(speed, 0));
             // m_Rigidbody.MovePosition(Mathf.PingPong(Time.time * speed, dis) * dir * new Vector3(1, 0, 0) + startPos);
             if (dir == 1 && Vector3.Distance(endPos, transform.position) < 0.01f) {
@@ -69,11 +73,7 @@ public class EnemyMove : MonoBehaviour
                 dir = - dir;
                 transform.localScale = new Vector3(-1.0f, 1.0f, 1);
             }
-            if (!isOnGround) {
-                dir = - dir;
-                transform.localScale = new Vector3(-transform.localScale.x, 1.0f, 1);
 
-            }
             
         } else {
             m_Rigidbody.MovePosition(Mathf.PingPong(Time.time * speed, dis) * dir * new Vector3(0, 1, 0) + startPos);
@@ -87,8 +87,8 @@ public class EnemyMove : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.transform.tag == "shield" || other.transform.tag == "blockDoor") {
-            
+        if (other.transform.tag == "shield") {
+            Debug.Log("s");
             
             dir = - dir;
             transform.localScale = new Vector3(-transform.localScale.x, 1.0f, 1);
@@ -97,4 +97,32 @@ public class EnemyMove : MonoBehaviour
 
 
 }
-
+// public class MovingPlatform : MonoBehaviour
+// {
+//  public float speed;
+//  public Transform start;
+//  public Transform end;
+ 
+//  private Vector3 startPos;
+//  private Vector3 endPos;
+//  private float distance;
+//  private Vector3 direction;
+ 
+//  private Rigidbody2D rb;
+ 
+ 
+//  public void Awake()
+//  {
+//   rb = GetComponent<Rigidbody2D>();
+//   rb.isKinematic = true;
+//   startPos = start.position;
+//   endPos = end.position;
+//   distance = Vector3.Distance(endPos, startPos);
+//   direction = Vector3.Normalize(endPos - startPos);
+//  }
+ 
+//  public void FixedUpdate ()
+//  {
+//   rb.MovePosition(Mathf.PingPong(Time.time*speed, distance)*direction + startPos);
+//  }
+// }
