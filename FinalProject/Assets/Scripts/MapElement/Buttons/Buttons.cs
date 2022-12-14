@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Buttons : MonoBehaviour
 {
+    public Transform correspondingBlockDoor;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +17,10 @@ public class Buttons : MonoBehaviour
         
     }
 
-    
+
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        
+    }
 }
