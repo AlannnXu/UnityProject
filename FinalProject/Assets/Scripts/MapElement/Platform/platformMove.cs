@@ -20,6 +20,7 @@ public class platformMove : MonoBehaviour
 
     void Start()
     {
+        dir = -1;
         start_x = transform.position.x;//水平移动的起点
         start_y = transform.position.y;//竖直移动的起点
         m_Rigidbody = GetComponent<Rigidbody2D>();
@@ -32,37 +33,33 @@ public class platformMove : MonoBehaviour
        
     }
 
-    // public void Move()
-    // {
-    //     //移动
-    //     //竖直移动
-    //     if (flag)
-    //     {
-    //         transform.Translate(Vector2.right * dir * speed * Time.deltaTime);
-    //         if (System.Math.Abs(transform.position.x - start_x) <= 0.1f || System.Math.Abs(transform.position.x - start_x) >= dis) { dir = -dir; }
-    //     }
-    //     //水平移动
-    //     else {
-    //         transform.Translate(Vector2.up * dir * speed * Time.deltaTime);
-    //         if (System.Math.Abs(transform.position.y - start_y) <= 0.1f || System.Math.Abs(transform.position.y - start_y) >= dis) { dir = -dir; }
-    //     }
-    // }
+
 
     private void FixedUpdate() {
-        // if (flag) {
-        //     m_Rigidbody.MovePosition(transform.position + Vector3.right * dir * speed * Time.deltaTime);
-        // } else {
-        //     m_Rigidbody.MovePosition(transform.position + Vector3.up * dir * speed * Time.deltaTime);
-        // }
 
-        // if (flag) {
-        //     m_Rigidbody.MovePosition(Mathf.PingPong(Time.time * speed, ))
-        // }
         if (flag) {
-            m_Rigidbody.MovePosition(Mathf.PingPong(Time.time * speed, dis) * dir * new Vector3(1, 0, 0) + startPos);
+            
+            m_Rigidbody.MovePosition(transform.GetComponent<Rigidbody2D>().position + dir * Time.fixedDeltaTime * new Vector2(speed, 0));
+            // m_Rigidbody.MovePosition(Mathf.PingPong(Time.time * speed, dis) * dir * new Vector3(1, 0, 0) + startPos);
+            if (dir == 1 && Vector3.Distance(endPos, transform.position) < 0.01f) {
+                dir = - dir;
+                
+            } else if (dir == -1 && Vector3.Distance(transform.position, startPos) < 0.01f) {
+                dir = - dir;
+                
+            }
+
+            
         } else {
             m_Rigidbody.MovePosition(Mathf.PingPong(Time.time * speed, dis) * dir * new Vector3(0, 1, 0) + startPos);
-        }
+            if (dir == 1 && Vector3.Distance(endPos, transform.position) < 0.01f) {
+                dir = - dir;
+                
+            } else if (dir == -1 && Vector3.Distance(transform.position, startPos) < 0.01f) {
+                dir = - dir;
+                
+            }
+        }        
         
     }
 }
