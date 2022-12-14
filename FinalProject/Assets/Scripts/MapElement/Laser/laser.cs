@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class laser : MonoBehaviour
 {
-    //public int direction;
+    public int direction;
     public float width;
     private LineRenderer lineRenderer;
 
@@ -65,7 +65,26 @@ public class laser : MonoBehaviour
     {
         RaycastHit2D hit;
 
-        hit = Physics2D.Raycast(transform.position, Vector2.down, 1000, (1 << 8) | (1 << 11) | (1 << 12) | (1 << 9) | (1 << 13)) ;
+        if(direction == 0)
+        {
+
+            hit = Physics2D.Raycast(transform.position, Vector2.down, 1000, (1 << 8) | (1 << 11) | (1 << 12) | (1 << 9) | (1 << 13)) ;
+        }
+        else if(direction == 1)
+        {
+
+            hit = Physics2D.Raycast(transform.position, Vector2.left, 1000, (1 << 8) | (1 << 11) | (1 << 12) | (1 << 9) | (1 << 13)) ;
+        }
+        else if(direction == 2)
+        {
+            hit = Physics2D.Raycast(transform.position, Vector2.right, 1000, (1 << 8) | (1 << 11) | (1 << 12) | (1 << 9) | (1 << 13)) ;
+
+        }
+        else
+        {
+
+            hit = Physics2D.Raycast(transform.position, Vector2.up, 1000, (1 << 8) | (1 << 11) | (1 << 12) | (1 << 9) | (1 << 13)) ;
+        }
 
         if (hit)
         {
