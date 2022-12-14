@@ -2258,6 +2258,8 @@ MonoBehaviour:
   groundCheck: {fileID: 3874863280458649225}
   shieldPrefab: {fileID: 2220299470861201534}
   rightHandPrefab: {fileID: 2250887623968555113}
+  p1: {fileID: 6200000, guid: 0cadbc7615eaf0348bb639c6b83e2e53, type: 2}
+  p2: {fileID: 6200000, guid: 28d2621f55aad084aad0f89194c87c01, type: 2}
   keyNum: 0
   animator: {fileID: 9146699619342577471}
   speed: 5

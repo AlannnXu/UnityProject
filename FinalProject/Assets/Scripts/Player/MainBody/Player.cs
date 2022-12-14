@@ -9,6 +9,10 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform shieldPrefab;
     [SerializeField] private Transform rightHandPrefab;
+
+        // 物理材料
+    public PhysicsMaterial2D p1;    // 有摩擦力的
+    public PhysicsMaterial2D p2;    // 无摩擦力的
     public int keyNum;
     public Animator animator;
     private Rigidbody2D rb;
@@ -58,6 +62,7 @@ public class Player : MonoBehaviour
         animator.Update(0f);
         animator.Play("0_idle");
         keyNum = 0;
+        rb.sharedMaterial = p1;
     }
 
 
@@ -127,10 +132,12 @@ public class Player : MonoBehaviour
         if (Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer)) 
         {
             isOnGround = true;
+            rb.sharedMaterial = p1;
         }
         else
         {
             isOnGround = false;
+            rb.sharedMaterial = p2;
         }
 
    
