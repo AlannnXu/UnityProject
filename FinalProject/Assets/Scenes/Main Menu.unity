@@ -579,11 +579,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 530980752}
-<<<<<<< Updated upstream
-        m_MethodName: MainToSetings
-=======
-        m_MethodName: Settings
->>>>>>> Stashed changes
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -970,11 +965,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 530980752}
-<<<<<<< Updated upstream
-        m_MethodName: MainToLevel
-=======
-        m_MethodName: Levels
->>>>>>> Stashed changes
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
