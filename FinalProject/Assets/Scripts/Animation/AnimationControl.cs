@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class AnimationControl : MonoBehaviour
 {
+    public AudioSource runSound;
+    public AudioSource jumpSound;
+    public AudioSource throwSound;
+    public AudioSource deathSound;
     public Player player;
     public Animator animator;
     private bool isIdle = true;
@@ -12,7 +16,7 @@ public class AnimationControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator.SetBool("IdleToRun", false);
+
     }
 
     // Update is called once per frame
