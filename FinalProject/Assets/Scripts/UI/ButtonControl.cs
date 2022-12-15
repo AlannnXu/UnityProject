@@ -46,8 +46,5 @@ public class ButtonControl : MonoBehaviour
     {
         SceneManager.LoadScene("Settings");
     }
-    public void Pause()
-    {
-        Time.timeScale = 0f;
-    }
+    
 }

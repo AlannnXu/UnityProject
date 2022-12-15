@@ -26,5 +26,6 @@ public class IngameUIController : MonoBehaviour
     {
         Time.timeScale = 0f;
         pauseUI.SetActive(false);
+        Instantiate(pausePrefab);
     }
 }
