@@ -857,4 +857,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2213875110536220890}
-  player: {fileID: 0}
+  player: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739, type: 3}
