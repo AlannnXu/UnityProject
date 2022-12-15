@@ -1425,7 +1425,7 @@ GameObject:
   - component: {fileID: 3426386752231777527}
   - component: {fileID: 7828127547705178077}
   m_Layer: 5
-  m_Name: Unit002
+  m_Name: Hermes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1878,7 +1878,7 @@ Animator:
   m_GameObject: {fileID: 4713815599707886614}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ab937231d0600440fb0d8757568d78d7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4597e7168d247264cb9133c7686e8a8b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

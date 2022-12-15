@@ -280,10 +280,12 @@ public class Player : MonoBehaviour
                 Destroy(other.transform.parent.gameObject);
                 break;
             case "EnemyBody":
-                PlayerDeath();
+                animator.Play("4_Death 0");
+                Invoke("PlayerDeath", 1f);
                 break;
             case "hazard":
-                PlayerDeath();
+                animator.Play("4_Death 0");
+                Invoke("PlayerDeath", 1f);
                 break;
             case "Key":
                 keyNum++;
@@ -297,7 +299,8 @@ public class Player : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other) {
         switch (other.gameObject.tag) {
             case "Finish":
-                PlayerDeath();
+                animator.Play("4_Death 0");
+                Invoke("PlayerDeath", 1f);
                 break;
         }
     }
@@ -305,5 +308,7 @@ public class Player : MonoBehaviour
     public void PlayerDeath() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+
 }
 
