@@ -280,11 +280,11 @@ public class Player : MonoBehaviour
                 Destroy(other.transform.parent.gameObject);
                 break;
             case "EnemyBody":
-                animator.Play("4_Death 0");
+                animator.Play("4_Death");
                 Invoke("PlayerDeath", 1f);
                 break;
             case "hazard":
-                animator.Play("4_Death 0");
+                animator.Play("4_Death");
                 Invoke("PlayerDeath", 1f);
                 break;
             case "Key":
@@ -299,7 +299,7 @@ public class Player : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other) {
         switch (other.gameObject.tag) {
             case "Finish":
-                animator.Play("4_Death 0");
+                animator.Play("4_Death");
                 Invoke("PlayerDeath", 1f);
                 break;
         }
