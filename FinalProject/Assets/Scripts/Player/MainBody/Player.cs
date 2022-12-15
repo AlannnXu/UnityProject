@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform rightHandPrefab;
 
     [SerializeField] private platformMove platformScript;
+    [SerializeField] private Buttons buttonScript;
 
     // 物理材料
     public PhysicsMaterial2D p1;    // 有摩擦力的
@@ -46,9 +47,11 @@ public class Player : MonoBehaviour
 
     [Header("状态")]
     public bool isOnGround;
+    public bool isOnButton;
     private bool isRunning = false;
     [Header("环境检测")]
     public LayerMask groundLayer;
+    public LayerMask buttonLayer;
 
     //按键设置
     bool jumpPress;
@@ -83,6 +86,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         isOnGroundCheck();
+        isOnButtonCheck();
         Move();
         Jump();
         if (haveShield)
@@ -140,6 +144,26 @@ public class Player : MonoBehaviour
         {
             isOnGround = false;
             rb.sharedMaterial = p2;
+        }
+
+   
+    }
+        void isOnButtonCheck()
+    {
+        ////判断角色碰撞器与button图层发生接触
+        GameObject outShield = GameObject.FindWithTag("shield");
+        if (Physics2D.OverlapCircle(groundCheck.position, 0.1f, buttonLayer) || Physics2D.OverlapCircle(outShield.transform.position, 0.5f, buttonLayer)) 
+        {
+            isOnButton = true;
+
+        }
+        else
+        {
+            if (isOnButton) {
+                buttonScript.isNeedToIncrease = true;
+            }
+            isOnButton = false;
+
         }
 
    
@@ -219,16 +243,32 @@ public class Player : MonoBehaviour
         // }
     }
 
-    private void OnCollisionStay2D(Collision2D other) {
+    public void OnCollisionStay2D(Collision2D other) {
         if (other.gameObject.tag == "platform") {
             platformScript = other.gameObject.GetComponent<platformMove>();
             if (platformScript.flag) {
-                Debug.Log("ssdczx");
+
                 transform.position = new Vector3(transform.position.x + platformScript.directionOfPlatform * platformScript.speed * Time.deltaTime,
                 transform.position.y, transform.position.z);
             }
-        }        
+        } else if (other.gameObject.tag == "button") {
+            Debug.Log("pengdaole");
+            buttonScript = other.gameObject.GetComponent<Buttons>();
+            if (!buttonScript.isHorizontal) {
+                buttonScript.correspondingBlockDoor.position = new Vector3(buttonScript.correspondingBlockDoor.position.x, 
+                    buttonScript.correspondingBlockDoor.position.y - buttonScript.DoorSpeed * Time.deltaTime, buttonScript.correspondingBlockDoor.position.z);
+                other.gameObject.transform.position = new Vector3(other.gameObject.transform.position.x, 
+                    other.gameObject.transform.position.y - buttonScript.buttonSpeed * Time.deltaTime, other.gameObject.transform.position.z);         
+            }
+        }     
     }
+
+    // public void OnCollisionExit2D(Collision2D other) {
+    //     if (other.gameObject.tag == "button" && !isOnButton) {
+    //         Debug.Log("liule");
+    //         buttonScript.isNeedToIncrease = true;
+    //     }
+    // }
 
     void OnTriggerEnter2D(Collider2D other)//接触时触发，无需调用
     {

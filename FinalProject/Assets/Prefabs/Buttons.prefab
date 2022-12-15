@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2467888200439717760}
   - component: {fileID: 4917337201155291715}
   - component: {fileID: 2021330939319763821}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ButtonBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8073066883071517116}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,9 +152,9 @@ GameObject:
   - component: {fileID: 7001529310173134774}
   - component: {fileID: 5030452163761278178}
   - component: {fileID: 146022645709381164}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ButtonClick
-  m_TagString: Untagged
+  m_TagString: button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,3 +263,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correspondingBlockDoor: {fileID: 0}
   isHorizontal: 0
+  isNeedToIncrease: 0
+  DoorSpeed: 2.7
+  buttonSpeed: 0.2
