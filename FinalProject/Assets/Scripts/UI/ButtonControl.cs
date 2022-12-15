@@ -16,8 +16,38 @@ public class ButtonControl : MonoBehaviour
         
     }
 
-    public void Switch()
+    public void NewGame()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("1-1");
+    }
+
+    public void LoadLevel1()
+    {
+        SceneManager.LoadScene("1-1");
+    }
+
+    public void LoadLevel2()
+    {
+        SceneManager.LoadScene("2-1");
+    }
+    public void LoadLevel3()
+    {
+        SceneManager.LoadScene("3-1");
+    }
+    public void BackToMain()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+    public void MainToLevel()
+    {
+        SceneManager.LoadScene("Levels");
+    }
+    public void MainToSetings()
+    {
+        SceneManager.LoadScene("Settings");
+    }
+    public void Pause()
+    {
+        Time.timeScale = 0f;
     }
 }
