@@ -263,6 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correspondingBlockDoor: {fileID: 0}
   isHorizontal: 0
+  isOnButton: 0
   isNeedToIncrease: 0
-  DoorSpeed: 2.8
+  DoorSpeed: 2.75
   buttonSpeed: 0.2

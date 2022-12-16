@@ -73,6 +73,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        
         if (Input.GetButtonDown("Jump") && jumpCount > 0)
         {
             jumpPress = true;
@@ -85,6 +86,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        
         isOnGroundCheck();
         isOnButtonCheck();
         Move();
@@ -162,11 +164,12 @@ public class Player : MonoBehaviour
         }
         else
         {
-            if (buttonScript.isOnButton) {
-                buttonScript.isNeedToIncrease = true; 
-            }
+
             if (buttonScript != null) {
                 buttonScript.isOnButton = false;
+                if (buttonScript.isOnButton) {
+                    buttonScript.isNeedToIncrease = true; 
+                }
             }             
             // isOnButton = false;
 
@@ -189,9 +192,10 @@ public class Player : MonoBehaviour
 
     void Move()
     {
+        Debug.Log("ss");
         xVelocity = Input.GetAxisRaw("Horizontal");
 
-        
+        Debug.Log("xVelocity: " + xVelocity);
 
         rb.velocity = new Vector2(xVelocity * speed, rb.velocity.y);
 
