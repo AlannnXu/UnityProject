@@ -154,15 +154,21 @@ public class Player : MonoBehaviour
         GameObject outShield = GameObject.FindWithTag("shield");
         if (Physics2D.OverlapCircle(groundCheck.position, 0.1f, buttonLayer) || Physics2D.OverlapCircle(outShield.transform.position, 0.5f, buttonLayer)) 
         {
-            isOnButton = true;
+            if (buttonScript != null) {
+                buttonScript.isOnButton = true;
+            } 
+            
 
         }
         else
         {
-            if (isOnButton) {
-                buttonScript.isNeedToIncrease = true;
-            }
-            isOnButton = false;
+            // if (isOnButton) {
+            //     buttonScript.isNeedToIncrease = true;
+            // }
+            if (buttonScript != null) {
+                buttonScript.isOnButton = false;
+            }             
+            // isOnButton = false;
 
         }
 

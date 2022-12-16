@@ -7,6 +7,7 @@ public class Buttons : MonoBehaviour
     public Transform correspondingBlockDoor;
     public bool isHorizontal;
     private Vector3 initPos;
+    public bool isOnButton;
     public bool isNeedToIncrease;
     public float DoorSpeed = 2.2f;
     public float buttonSpeed = 0.2f;
@@ -19,7 +20,7 @@ public class Buttons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isNeedToIncrease) {
+        if (!isOnButton) {
                 transform.position = new Vector3(transform.position.x, 
                     transform.position.y + buttonSpeed * Time.deltaTime, transform.position.z);
                 correspondingBlockDoor.position = new Vector3(correspondingBlockDoor.position.x, 
