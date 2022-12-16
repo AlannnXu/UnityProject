@@ -21,6 +21,11 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D coll;
 
+    [Header("音效")]
+    public AudioSource RunSound;
+    public AudioSource jumpSound;
+
+
     [Header("移动参数")]
     public float speed = 5f;
 
@@ -203,7 +208,26 @@ public class Player : MonoBehaviour
         if (xVelocity != 0)
         {
             transform.localScale = new Vector3(1.0f * (-xVelocity), 1.0f, 1);
+            isRunning = true;
         }
+        else
+        {
+            isRunning = false;
+        }
+
+        if (isOnGround &&isRunning)
+        {
+            if (!RunSound.isPlaying)
+            {
+                RunSound.Play();
+            }
+        }
+        else
+        {
+            RunSound.Stop();
+        }
+
+        
     }
 
     void Jump()
@@ -216,6 +240,7 @@ public class Player : MonoBehaviour
         //在地面上跳跃
         if (jumpPress && isOnGround)
         {
+            jumpSound.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpCount--;
             jumpPress = false;
