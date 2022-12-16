@@ -95,6 +95,11 @@ public class EnemyMove : MonoBehaviour
         }         
     }
 
+    public void enemyDeath() {
+        Debug.Log("ddd");
+        Destroy(transform.gameObject);
+    }
+
 
 }
 // public class MovingPlatform : MonoBehaviour

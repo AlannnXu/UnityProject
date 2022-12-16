@@ -94,7 +94,8 @@ public class laser : MonoBehaviour
             }
             else if(hit.collider.tag == "Enemy")
             {
-                //hit.collider.GetComponent<Enemy>().Death();
+                Debug.Log("dddddd");
+                hit.collider.GetComponent<EnemyMove>().enemyDeath();
             }
         }
         Debug.DrawLine(transform.position, hit.point, Color.red);

@@ -264,5 +264,5 @@ MonoBehaviour:
   correspondingBlockDoor: {fileID: 0}
   isHorizontal: 0
   isNeedToIncrease: 0
-  DoorSpeed: 2.7
+  DoorSpeed: 2.8
   buttonSpeed: 0.2
