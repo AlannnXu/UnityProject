@@ -14,13 +14,14 @@ public class Buttons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isNeedToIncrease = false;
         initPos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isOnButton) {
+        if (!isOnButton && isNeedToIncrease) {
                 transform.position = new Vector3(transform.position.x, 
                     transform.position.y + buttonSpeed * Time.deltaTime, transform.position.z);
                 correspondingBlockDoor.position = new Vector3(correspondingBlockDoor.position.x, 

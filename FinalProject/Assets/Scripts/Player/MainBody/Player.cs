@@ -162,9 +162,9 @@ public class Player : MonoBehaviour
         }
         else
         {
-            // if (isOnButton) {
-            //     buttonScript.isNeedToIncrease = true;
-            // }
+            if (buttonScript.isOnButton) {
+                buttonScript.isNeedToIncrease = true; 
+            }
             if (buttonScript != null) {
                 buttonScript.isOnButton = false;
             }             
