@@ -38,7 +38,6 @@ public class ThunderBall : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log(Time.time + ":进入thunderBall触发器的对象是：" + other.gameObject.name);
         switch (other.gameObject.tag) {
             case "EnemyHead":
             case "EnemyBody":

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
     Rigidbody2D m_Rigidbody;
+    public Animator enemyAnimation;
     public float dis;
     // public Transform begin;
     // public Transform end;
@@ -103,7 +104,7 @@ public class EnemyMove : MonoBehaviour
 
     public void enemyDeath() {
 
-        Destroy(transform.gameObject);
+        enemyAnimation.Play("4_Death");
     }
 
 

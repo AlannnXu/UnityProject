@@ -284,7 +284,7 @@ Transform:
   m_GameObject: {fileID: 1825721537566894950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 0.16, y: 0.12, z: 1}
+  m_LocalScale: {x: 0.16, y: 0.16, z: 1}
   m_Children:
   - {fileID: 560031916}
   m_Father: {fileID: 0}
@@ -353,7 +353,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDownText: {fileID: 284052052}
-  enemyScript: {fileID: 0}
+  enemyScript: {fileID: 6973842253189706291, guid: 85ec6b39d10c5874596a56e3bb2cfc21,
+    type: 3}
   speed: 4
   direction: 1
   isInBlue: 0

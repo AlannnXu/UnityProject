@@ -5280,6 +5280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba56e5613f5d8ba4aa51acad07ffcc39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAnimation: {fileID: 6563172050400836130}
   dis: 2
   speed: 1
   flag: 1

@@ -13,6 +13,7 @@ public class AnimationControl : MonoBehaviour
     private bool isIdle = true;
     private int isRunning = 0;//0 静止 1 左 2 右
     private bool isJumping = false;
+    private bool exBall = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class AnimationControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //移动跳跃
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if(player.isOnGround)
@@ -54,6 +56,13 @@ public class AnimationControl : MonoBehaviour
         }
 
         ResetAnimator();
+
+        //扔球
+        if (Input.GetKeyDown(KeyCode.L)&&(GameObject.Find("thunderBall(Clone)") == null)){
+            Debug.Log("asdada");
+            animator.Update(0);
+            animator.Play("2_Attack_Normal");
+        }
     }
 
     private void ResetAnimator()
@@ -62,11 +71,13 @@ public class AnimationControl : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.A)&& isRunning == 1)
         {
             animator.SetBool("IdleToRun", false);
+            animator.Play("0_idle");
             isIdle = true;
             isRunning = 0;
         }else if(Input.GetKeyUp(KeyCode.D) && isRunning == 2)
         {
             animator.SetBool("IdleToRun", false);
+            animator.Play("0_idle");
             isIdle = true;
             isRunning = 0;
         }else if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
