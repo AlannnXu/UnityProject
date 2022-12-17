@@ -29,7 +29,7 @@ public class platformMove : MonoBehaviour
         if (flag) {
             endPos = new Vector3(transform.position.x + dis, transform.position.y, transform.position.z);
         } else {
-            endPos = new Vector3(transform.position.x, transform.position.y, transform.position.z + dis);
+            endPos = new Vector3(transform.position.x, transform.position.y + dis, transform.position.z);
         }
        
     }
@@ -52,7 +52,8 @@ public class platformMove : MonoBehaviour
 
                 
             } else {
-                m_Rigidbody.MovePosition(Mathf.PingPong(Time.time * speed, dis) * directionOfPlatform * new Vector3(0, 1, 0) + startPos);
+                m_Rigidbody.MovePosition(transform.GetComponent<Rigidbody2D>().position + directionOfPlatform * Time.fixedDeltaTime * new Vector2(0, speed));
+                // m_Rigidbody.MovePosition(Mathf.PingPong(Time.time * speed, dis) * directionOfPlatform * new Vector3(0, 1, 0) + startPos);
                 if (directionOfPlatform == 1 && Vector3.Distance(endPos, transform.position) < 0.01f) {
                     directionOfPlatform = - directionOfPlatform;
                     
