@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
     public bool isOnGround;
     public bool isOnButton;
     private bool isRunning = false;
+    public bool isDead;
     [Header("环境检测")]
     public LayerMask groundLayer;
     public LayerMask buttonLayer;
@@ -79,36 +80,41 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
-        if (Input.GetButtonDown("Jump") && jumpCount > 0)
-        {
-            jumpPress = true;
-        }
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            shieldPress = true;
+        if (!isDead) {
+            if (Input.GetButtonDown("Jump") && jumpCount > 0)
+            {
+                jumpPress = true;
+            }
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                shieldPress = true;
+            }
         }
     }
 
     void FixedUpdate()
     {
-        
-        isOnGroundCheck();
-        isOnButtonCheck();
-        Move();
-        Jump();
-        if (haveShield)
-        {
-            shieldDetect();
+        if (!isDead) {
+            isOnGroundCheck();
+            isOnButtonCheck();
+            Move();
+            Jump();
+            if (haveShield)
+            {
+                shieldDetect();
+            } else {
+                isShieldOnGroundCheck();
+            }
         } else {
-            isShieldOnGroundCheck();
+            rb.velocity = Vector2.zero;
         }
+
         
     }
 
     void shieldDetect()
     {
-        if (shieldPress)
+        if (shieldPress && !isDead)
         {
             if (!shieldOut)
             {
@@ -342,12 +348,10 @@ public class Player : MonoBehaviour
                 Destroy(other.transform.parent.gameObject);
                 break;
             case "EnemyBody":
-                animator.Play("4_Death");
-                Invoke("PlayerDeath", 1f);
+                PlayerDeath();
                 break;
             case "hazard":
-                animator.Play("4_Death");
-                Invoke("PlayerDeath", 1f);
+                PlayerDeath();
                 break;
             case "Key":
                 keyNum++;
@@ -361,13 +365,19 @@ public class Player : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other) {
         switch (other.gameObject.tag) {
             case "Finish":
-                animator.Play("4_Death");
-                Invoke("PlayerDeath", 1f);
+                PlayerDeath();
                 break;
         }
     }
 
     public void PlayerDeath() {
+        isDead = true;
+        animator.Play("4_Death");
+        
+        Invoke("Reload", 1f);        
+    }
+
+    private void Reload() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
