@@ -6,6 +6,7 @@ public class HeadCollide : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float jumpForce = 4f;
+    public Animator enemyAnimation;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +19,13 @@ public class HeadCollide : MonoBehaviour
         
     }
 
-    // void OnTriggerEnter2D(Collider2D other)//接触时触发，无需调用
-    // {
-    //     Debug.Log(Time.time + ":进入该触发器的对象是：" + other.gameObject.name);
-    //     if (other.gameObject.tag == "Player") {
-    //         Debug.Log(Time.time + "tag没毛病");
-    //         rb.AddForce(transform.up * jumpForce);
-    //     }
+     void OnTriggerEnter2D(Collider2D other)//接触时触发，无需调用
+     {
+         
+        if (other.gameObject.tag == "Player") {
+             
+             enemyAnimation.Play("4_Death");
+         }
         
-    // }
+     }
 }
