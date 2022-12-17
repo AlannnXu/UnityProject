@@ -3505,6 +3505,7 @@ GameObject:
   - component: {fileID: 8510711091127262167}
   - component: {fileID: 8008270050038039578}
   - component: {fileID: 6563172050400836130}
+  - component: {fileID: 947062951}
   m_Layer: 13
   m_Name: UnitRoot
   m_TagString: Untagged
@@ -3558,6 +3559,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &947062951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3098779944449482213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdf13798d8fe8154491fa46269962b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAnimation: {fileID: 6563172050400836130}
 --- !u!1 &3126323362037768347
 GameObject:
   m_ObjectHideFlags: 0
@@ -5266,10 +5280,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba56e5613f5d8ba4aa51acad07ffcc39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dis: 3
+  dis: 2
   speed: 1
   flag: 1
   endPos: {x: 0, y: 0, z: 0}
+  isInBlue: 0
 --- !u!61 &1985690745286326343
 BoxCollider2D:
   m_ObjectHideFlags: 0
