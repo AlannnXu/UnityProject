@@ -132,8 +132,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6657289482119992604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8977792, y: 3.3191915, z: -2.2304688}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 7067101299465802127}
   - {fileID: 2467888200439717760}
@@ -262,8 +262,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correspondingBlockDoor: {fileID: 0}
-  isHorizontal: 0
+  forceStop: 0
   isOnButton: 0
+  isInBlue: 0
   isNeedToIncrease: 0
-  DoorSpeed: 2.75
+  DoorSpeed: 1.7
   buttonSpeed: 0.2
