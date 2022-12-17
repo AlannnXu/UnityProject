@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class HeadCollide : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public float jumpForce = 4f;
     public Animator enemyAnimation;
     // Start is called before the first frame update
     void Start()
@@ -19,13 +17,8 @@ public class HeadCollide : MonoBehaviour
         
     }
 
-     void OnTriggerEnter2D(Collider2D other)//接触时触发，无需调用
-     {
-         
-        if (other.gameObject.tag == "Player") {
-             
-             enemyAnimation.Play("4_Death");
-         }
-        
-     }
+     public void DestroySelf()
+    {
+        Destroy(this.transform.parent.gameObject);
+    }
 }

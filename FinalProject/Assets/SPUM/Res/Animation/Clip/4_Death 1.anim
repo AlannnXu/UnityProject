@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 4_Death
+  m_Name: 4_Death 1
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -4484,12 +4484,4 @@ AnimationClip:
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.41666666
-    functionName: DestroySelf
-    data: 
-    objectReferenceParameter: {fileID: 7287433793098144094, guid: 85ec6b39d10c5874596a56e3bb2cfc21,
-      type: 3}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []

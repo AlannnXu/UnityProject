@@ -7922,6 +7922,31 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 4386375361403996145}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &720820889 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4588303413251658128, guid: 8143030f543438b46840d25e1ae7e739,
+    type: 3}
+  m_PrefabInstance: {fileID: 649133264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &720820890 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9146699619342577471, guid: 8143030f543438b46840d25e1ae7e739,
+    type: 3}
+  m_PrefabInstance: {fileID: 649133264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &720820893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720820889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdf13798d8fe8154491fa46269962b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAnimation: {fileID: 720820890}
 --- !u!224 &725926878 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3426386752231777527, guid: 7a17db953d03201429a1f996c2214587,
@@ -8717,6 +8742,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 937027102}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &947062947 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3098779944449482213, guid: 85ec6b39d10c5874596a56e3bb2cfc21,
+    type: 3}
+  m_PrefabInstance: {fileID: 1124906280}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &947062949 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6563172050400836130, guid: 85ec6b39d10c5874596a56e3bb2cfc21,
+    type: 3}
+  m_PrefabInstance: {fileID: 1124906280}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &947062951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947062947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdf13798d8fe8154491fa46269962b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAnimation: {fileID: 947062949}
 --- !u!1001 &956258658
 PrefabInstance:
   m_ObjectHideFlags: 0

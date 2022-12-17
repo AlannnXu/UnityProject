@@ -343,7 +343,8 @@ public class Player : MonoBehaviour
         switch (other.gameObject.tag) {
             case "EnemyHead":
                 rb.velocity = new Vector2(rb.velocity.x, superJumpForce);
-                Destroy(other.transform.parent.gameObject);
+                //Destroy(other.transform.parent.gameObject);
+                other.transform.parent.GetChild(1).gameObject.GetComponent<Animator>().Play("4_Death");
                 break;
             case "EnemyBody":
                 PlayerDeath();
@@ -370,7 +371,7 @@ public class Player : MonoBehaviour
 
     public void PlayerDeath() {
         isDead = true;
-        animator.Play("4_Death");
+        animator.Play("4_Death 1");
         
         Invoke("Reload", 1f);        
     }
