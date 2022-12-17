@@ -2271,7 +2271,7 @@ MonoBehaviour:
   jumpSound: {fileID: 0}
   speed: 3
   haveShield: 1
-  status: 2
+  status: 1
   throwForce: 0
   shieldOut: 0
   jumpForce: 5
