@@ -20,8 +20,12 @@ public class ThunderBall : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!isInBlue)
+        if (!isInBlue){
             m_Rigidbody.MovePosition(m_Rigidbody.position + direction * Time.fixedDeltaTime *  new Vector2(speed, 0));
+        } else {
+            m_Rigidbody.MovePosition(m_Rigidbody.position + direction * Time.fixedDeltaTime *  new Vector2(speed / 20, 0));
+        }
+            
     }
 
 
