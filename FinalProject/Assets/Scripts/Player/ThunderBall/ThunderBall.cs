@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ThunderBall : MonoBehaviour
 {
     Rigidbody2D m_Rigidbody;
+    public TextMeshProUGUI countDownText;
+    private float count = 4f;
     // public Transform player;
     public EnemyMove enemyScript;
     public float speed = 10f;
@@ -17,6 +20,11 @@ public class ThunderBall : MonoBehaviour
         // direction = player.localScale.x;
     }
 
+    void Update()
+    {
+        count -= Time.deltaTime;
+        countDownText.text = Mathf.Floor(count).ToString();
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
