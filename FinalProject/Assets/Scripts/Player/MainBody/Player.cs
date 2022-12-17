@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Transform buleTimeBall;
     [SerializeField] private Transform thunderBall;
+    [SerializeField] private ThunderBall thunderBallScript;
 
     [SerializeField] private platformMove platformScript;
     [SerializeField] private Buttons buttonScript;
@@ -101,6 +102,8 @@ public class Player : MonoBehaviour
             if (status >= 4 && Input.GetKeyDown(KeyCode.L)) {
                 if (GameObject.FindWithTag("thunderBall") == null) {
                     Instantiate(thunderBall, rightHandPrefab.position + Vector3.up * 0.2f, transform.rotation);
+                    thunderBallScript = GameObject.FindWithTag("thunderBall").GetComponent<ThunderBall>();
+                    thunderBallScript.direction = -transform.localScale.x;
                 }
             }
         }
