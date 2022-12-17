@@ -306,7 +306,7 @@ public class Player : MonoBehaviour
             status++;
         } else if (other.gameObject.tag == "blockDoor" && keyNum > 0) {
             keyNum--;
-            Destroy(other.transform.parent.gameObject);
+            Destroy(other.gameObject);
         } 
         // else if (other.gameObject.tag == "platform") {
         //     platformScript = other.gameObject.GetComponent<platformMove>();
