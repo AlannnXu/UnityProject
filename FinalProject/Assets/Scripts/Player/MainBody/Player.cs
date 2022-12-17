@@ -93,7 +93,8 @@ public class Player : MonoBehaviour
                 shieldPress = true;
             }
             if (status >= 2 && Input.GetKeyDown(KeyCode.K)) {
-                Instantiate(buleTimeBall, transform.position, transform.rotation);
+                if (GameObject.FindWithTag("blueTimeBall") == null)
+                    Instantiate(buleTimeBall, transform.position, transform.rotation);
             }
         }
     }
