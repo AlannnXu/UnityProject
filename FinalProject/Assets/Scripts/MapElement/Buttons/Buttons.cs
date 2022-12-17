@@ -21,7 +21,7 @@ public class Buttons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isOnButton && isNeedToIncrease && !forceStop) {
+        if (!isOnButton && isNeedToIncrease && !forceStop && (correspondingBlockDoor != null)) {
                 transform.position = new Vector3(transform.position.x, 
                     transform.position.y + buttonSpeed * Time.deltaTime, transform.position.z);
                 correspondingBlockDoor.position = new Vector3(correspondingBlockDoor.position.x, 

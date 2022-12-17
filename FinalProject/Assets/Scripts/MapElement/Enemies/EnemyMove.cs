@@ -6,6 +6,8 @@ public class EnemyMove : MonoBehaviour
 {
     Rigidbody2D m_Rigidbody;
     public float dis;
+    // public Transform begin;
+    // public Transform end;
     //移动速度
     public float speed;
     //水平移动为true 竖直移动为false
