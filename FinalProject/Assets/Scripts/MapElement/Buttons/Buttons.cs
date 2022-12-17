@@ -8,6 +8,7 @@ public class Buttons : MonoBehaviour
     public bool forceStop;
     private Vector3 initPos;
     public bool isOnButton;
+    public bool isInBlue;
     public bool isNeedToIncrease;
     public float DoorSpeed = 2.2f;
     public float buttonSpeed = 0.2f;
@@ -21,7 +22,7 @@ public class Buttons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isOnButton && isNeedToIncrease && !forceStop && (correspondingBlockDoor != null)) {
+        if (!isOnButton && isNeedToIncrease && !forceStop && (correspondingBlockDoor != null) && !isInBlue) {
                 transform.position = new Vector3(transform.position.x, 
                     transform.position.y + buttonSpeed * Time.deltaTime, transform.position.z);
                 correspondingBlockDoor.position = new Vector3(correspondingBlockDoor.position.x, 
