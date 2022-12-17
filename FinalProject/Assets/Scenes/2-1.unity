@@ -1198,12 +1198,6 @@ PrefabInstance:
       propertyPath: status
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
-        type: 3}
-      propertyPath: buleTimeBall
-      value: 
-      objectReference: {fileID: 9042404784513298837, guid: 3c17dbe040b7fd04bad3554fd994ed46,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8143030f543438b46840d25e1ae7e739, type: 3}
 --- !u!1 &215492965
@@ -11035,3 +11029,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c17dbe040b7fd04bad3554fd994ed46, type: 3}
+--- !u!1 &978945502420118403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 490542701207336631, guid: 3c17dbe040b7fd04bad3554fd994ed46,
+    type: 3}
+  m_PrefabInstance: {fileID: 978945502420118402}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &978945502420118404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978945502420118403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9398e62a7d4cd1b41a27eb0e2a10050c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformScript: {fileID: 0}
+  enemyScript: {fileID: 0}
