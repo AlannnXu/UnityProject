@@ -21,7 +21,13 @@ public class VolumeController : MonoBehaviour
     public void SetBGMVolume(float volume)    // 控制主音量的函数
     {
         BGMMixer.SetFloat("BGM", volume);
-        // MasterVolume为我们暴露出来的Master的参数
+
+    }
+
+    public void SetSoundVolume(float volume)    // 控制主音量的函数
+    {
+        BGMMixer.SetFloat("Sound", volume);
+
     }
 
 }
