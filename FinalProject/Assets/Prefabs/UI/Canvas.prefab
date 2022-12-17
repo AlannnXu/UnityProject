@@ -119,8 +119,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1121762446258272154}
-        m_MethodName: Settings
+      - m_Target: {fileID: 4709609439003793229}
+        m_MethodName: InGameToSetings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -249,8 +249,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1121762446258272154}
-        m_MethodName: Levels
+      - m_Target: {fileID: 4709609439003793229}
+        m_MethodName: InGameToLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -270,6 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2213875109597289654}
   - component: {fileID: 1121762446258272154}
+  - component: {fileID: 4709609439003793229}
   m_Layer: 5
   m_Name: MainButtonUI
   m_TagString: Untagged
@@ -311,6 +312,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73405cd2e2bd1f84ba0a4c34d835f867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4709609439003793229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2213875109597289641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec1edb5f0e65444a837abebb96076b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseUI: {fileID: 0}
+  pausePrefab: {fileID: 0}
 --- !u!1 &2213875109684980673
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +553,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1121762446258272154}
+      - m_Target: {fileID: 4709609439003793229}
         m_MethodName: Replay
         m_Mode: 1
         m_Arguments:

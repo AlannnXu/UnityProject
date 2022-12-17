@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IngameUIController : MonoBehaviour
 {
@@ -27,5 +28,19 @@ public class IngameUIController : MonoBehaviour
         Time.timeScale = 0f;
         pauseUI.SetActive(false);
         Instantiate(pausePrefab);
+    }
+
+    public void Replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void InGameToLevel()
+    {
+        SceneManager.LoadScene("Levels");
+    }
+    public void InGameToSetings()
+    {
+        SceneManager.LoadScene("Settings");
     }
 }
