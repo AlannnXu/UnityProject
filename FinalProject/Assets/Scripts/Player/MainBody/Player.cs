@@ -138,6 +138,7 @@ public class Player : MonoBehaviour
                 
                 outShield.GetComponent<Collider2D>().enabled = true;
                 outShield.GetComponent<Collider2D>().isTrigger = true;
+                status--;
                 // shieldOut = true;
             }
             // else
@@ -302,6 +303,7 @@ public class Player : MonoBehaviour
             other.transform.GetComponent<Collider2D>().enabled = false;
             shieldOut = false;
             haveShield = true;
+            status++;
         } else if (other.gameObject.tag == "blockDoor" && keyNum > 0) {
             keyNum--;
             Destroy(other.transform.parent.gameObject);
@@ -345,9 +347,14 @@ public class Player : MonoBehaviour
 
         switch (other.gameObject.tag) {
             case "EnemyHead":
-                rb.velocity = new Vector2(rb.velocity.x, superJumpForce);
-                //Destroy(other.transform.parent.gameObject);
-                other.transform.parent.GetChild(1).gameObject.GetComponent<Animator>().Play("4_Death");
+                if (status % 2 == 1) {
+                    rb.velocity = new Vector2(rb.velocity.x, superJumpForce);
+                    //Destroy(other.transform.parent.gameObject);
+                    other.transform.parent.GetChild(1).gameObject.GetComponent<Animator>().Play("4_Death");
+                } else {
+                    PlayerDeath();
+                }
+
                 break;
             case "EnemyBody":
                 PlayerDeath();
