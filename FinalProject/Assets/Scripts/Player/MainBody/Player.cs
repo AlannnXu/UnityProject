@@ -6,9 +6,12 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
 
+    [Header("身体部分")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform shieldPrefab;
     [SerializeField] private Transform rightHandPrefab;
+
+    [SerializeField] private Transform buleTimeBall;
 
     [SerializeField] private platformMove platformScript;
     [SerializeField] private Buttons buttonScript;
@@ -88,6 +91,9 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.J))
             {
                 shieldPress = true;
+            }
+            if (status >= 2 && Input.GetKeyDown(KeyCode.K)) {
+                Instantiate(buleTimeBall, transform.position, transform.rotation);
             }
         }
     }
@@ -309,7 +315,7 @@ public class Player : MonoBehaviour
     public void OnCollisionStay2D(Collision2D other) {
         if (other.gameObject.tag == "platform") {
             platformScript = other.gameObject.GetComponent<platformMove>();
-            if (platformScript.flag) {
+            if (platformScript.flag && !platformScript.isInBlue) {
 
                 transform.position = new Vector3(transform.position.x + platformScript.directionOfPlatform * platformScript.speed * Time.deltaTime,
                 transform.position.y, transform.position.z);

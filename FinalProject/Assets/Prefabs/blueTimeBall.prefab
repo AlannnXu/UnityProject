@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9042404784513298837}
   - component: {fileID: 6378456405775481831}
   - component: {fileID: 5207267118337545118}
+  - component: {fileID: 978945502420118404}
   m_Layer: 0
   m_Name: blueTimeBall
   m_TagString: blueTimeBall
@@ -98,3 +99,17 @@ CircleCollider2D:
   m_Offset: {x: -0.15554984, y: -1.2895627}
   serializedVersion: 2
   m_Radius: 5.35597
+--- !u!114 &978945502420118404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490542701207336631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9398e62a7d4cd1b41a27eb0e2a10050c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformScript: {fileID: 0}
+  enemyScript: {fileID: 0}
