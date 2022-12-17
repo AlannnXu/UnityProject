@@ -193,9 +193,7 @@ public class Player : MonoBehaviour
                 }
                 
             }
-            if (!Physics2D.OverlapCircle(outShield.transform.position, 0.4f, buttonLayer)) {
-                buttonScript2 = null;
-            }
+
             
 
         }
@@ -212,7 +210,9 @@ public class Player : MonoBehaviour
             // isOnButton = false;
 
         }
-
+        if (!Physics2D.OverlapCircle(outShield.transform.position, 0.4f, buttonLayer)) {
+            buttonScript2 = null;
+        }
    
     }
 
