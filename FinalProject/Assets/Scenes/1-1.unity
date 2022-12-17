@@ -7759,7 +7759,7 @@ PrefabInstance:
     - target: {fileID: 146022645709381164, guid: e6453845a143b3540935c8acf16bef01,
         type: 3}
       propertyPath: DoorSpeed
-      value: 2.77
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 6657289482119992604, guid: e6453845a143b3540935c8acf16bef01,
         type: 3}
@@ -10860,7 +10860,7 @@ PrefabInstance:
     - target: {fileID: 7677298970134595979, guid: dc80fb3e9da8ed345a1526147aacf7af,
         type: 3}
       propertyPath: dis
-      value: 7.5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7677298970134595979, guid: dc80fb3e9da8ed345a1526147aacf7af,
         type: 3}

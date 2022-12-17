@@ -24,7 +24,7 @@ public class AnimationControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(player.jumpCount > 0)
+            if(player.isOnGround)
             {
                 if (isRunning > 0)
                 {

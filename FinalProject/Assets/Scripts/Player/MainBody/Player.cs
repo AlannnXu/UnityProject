@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (!isDead) {
-            if (Input.GetButtonDown("Jump") && jumpCount > 0)
+            if (Input.GetButtonDown("Jump"))
             {
                 jumpPress = true;
             }
@@ -267,26 +267,29 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-        //在地面上
-        if (isOnGround)
-        {
-            jumpCount = 1;
-        }
+        // //在地面上
+        // if (isOnGround)
+        // {
+        //     jumpCount = 0;
+        // }
         //在地面上跳跃
         if (jumpPress && isOnGround)
         {
             jumpSound.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            jumpCount = 0;
+            // jumpCount = 1;
             jumpPress = false;
         }
-        //在空中跳跃
-        else if (jumpPress && jumpCount > 0 && !isOnGround)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            jumpCount = 0;
+        else if (jumpPress && !isOnGround) {
             jumpPress = false;
         }
+        // //在空中跳跃
+        // else if (jumpPress && jumpCount > 0 && !isOnGround)
+        // {
+        //     rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        //     jumpCount = 0;
+        //     jumpPress = false;
+        // }
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
