@@ -1198,6 +1198,12 @@ PrefabInstance:
       propertyPath: status
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
+        type: 3}
+      propertyPath: buleTimeBall
+      value: 
+      objectReference: {fileID: 9042404784513298837, guid: 3c17dbe040b7fd04bad3554fd994ed46,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8143030f543438b46840d25e1ae7e739, type: 3}
 --- !u!1 &215492965
