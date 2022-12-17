@@ -171,10 +171,11 @@ public class Player : MonoBehaviour
         {
 
             if (buttonScript != null) {
-                buttonScript.isOnButton = false;
+                
                 if (buttonScript.isOnButton) {
                     buttonScript.isNeedToIncrease = true; 
                 }
+                buttonScript.isOnButton = false;
             }             
             // isOnButton = false;
 

@@ -92,7 +92,7 @@ public class laser : MonoBehaviour
             {
                 hit.collider.GetComponent<Player>().PlayerDeath();
             }
-            else if(hit.collider.tag == "Enemy")
+            else if(hit.collider.tag == "EnemyHead" || hit.collider.tag == "EnemyBody")
             {
                 Debug.Log("dddddd");
                 hit.collider.GetComponent<EnemyMove>().enemyDeath();
