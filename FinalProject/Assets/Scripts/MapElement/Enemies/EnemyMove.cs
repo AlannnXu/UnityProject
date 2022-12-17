@@ -94,7 +94,7 @@ public class EnemyMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.transform.tag == "shield") {
-            Debug.Log("s");
+
             
             dir = - dir;
             transform.localScale = new Vector3(-transform.localScale.x, 1.0f, 1);

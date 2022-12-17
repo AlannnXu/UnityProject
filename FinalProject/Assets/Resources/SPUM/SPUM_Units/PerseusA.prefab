@@ -2258,8 +2258,11 @@ MonoBehaviour:
   groundCheck: {fileID: 3874863280458649225}
   shieldPrefab: {fileID: 2220299470861201534}
   rightHandPrefab: {fileID: 2250887623968555113}
+  buleTimeBall: {fileID: 9042404784513298837, guid: 3c17dbe040b7fd04bad3554fd994ed46,
+    type: 3}
   platformScript: {fileID: 0}
   buttonScript: {fileID: 0}
+  buttonScript2: {fileID: 0}
   p1: {fileID: 6200000, guid: 0cadbc7615eaf0348bb639c6b83e2e53, type: 2}
   p2: {fileID: 6200000, guid: 28d2621f55aad084aad0f89194c87c01, type: 2}
   keyNum: 0
@@ -2276,12 +2279,14 @@ MonoBehaviour:
   jumpCount: 0
   isOnGround: 0
   isOnButton: 0
+  isDead: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 18688
   buttonLayer:
     serializedVersion: 2
     m_Bits: 16384
+  jumpPress: 0
 --- !u!50 &7396067121628739737
 Rigidbody2D:
   serializedVersion: 4
