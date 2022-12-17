@@ -2260,24 +2260,22 @@ MonoBehaviour:
   rightHandPrefab: {fileID: 2250887623968555113}
   platformScript: {fileID: 0}
   buttonScript: {fileID: 0}
-  buttonScript2: {fileID: 0}
   p1: {fileID: 6200000, guid: 0cadbc7615eaf0348bb639c6b83e2e53, type: 2}
   p2: {fileID: 6200000, guid: 28d2621f55aad084aad0f89194c87c01, type: 2}
   keyNum: 0
   animator: {fileID: 9146699619342577471}
   RunSound: {fileID: 0}
   jumpSound: {fileID: 0}
-  speed: 3
+  speed: 5
   haveShield: 1
   status: 1
   throwForce: 0
   shieldOut: 0
-  jumpForce: 5
+  jumpForce: 6
   superJumpForce: 8
   jumpCount: 0
   isOnGround: 0
   isOnButton: 0
-  isDead: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 18688
