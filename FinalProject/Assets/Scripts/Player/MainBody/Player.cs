@@ -122,7 +122,7 @@ public class Player : MonoBehaviour
                 GameObject outShield = GameObject.FindWithTag("shield");
                 outShield.transform.parent = null;
                 outShield.AddComponent<Rigidbody2D>();
-                outShield.GetComponent<Rigidbody2D>().mass = 10;
+                outShield.GetComponent<Rigidbody2D>().mass = 100;
                 if (transform.localScale.x > 0) {
                     outShield.GetComponent<Rigidbody2D>().velocity = new Vector2(-throwForce,outShield.GetComponent<Rigidbody2D>().velocity.y);
                 } else {
@@ -230,13 +230,8 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        Debug.Log("ss");
         xVelocity = Input.GetAxisRaw("Horizontal");
-
-        Debug.Log("xVelocity: " + xVelocity);
-
         rb.velocity = new Vector2(xVelocity * speed, rb.velocity.y);
-
         //镜面翻转
         if (xVelocity != 0)
         {
@@ -289,7 +284,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (shieldOut && other.gameObject.tag == "shield") {
-            Debug.Log("ggd");
+
             other.transform.parent = rightHandPrefab;
             other.transform.localPosition = Vector3.zero;
             other.transform.localRotation = Quaternion.identity;
@@ -333,12 +328,6 @@ public class Player : MonoBehaviour
         }     
     }
 
-    // public void OnCollisionExit2D(Collision2D other) {
-    //     if (other.gameObject.tag == "button" && !isOnButton) {
-    //         Debug.Log("liule");
-    //         buttonScript.isNeedToIncrease = true;
-    //     }
-    // }
 
     void OnTriggerEnter2D(Collider2D other)//接触时触发，无需调用
     {

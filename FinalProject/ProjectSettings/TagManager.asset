@@ -12,6 +12,7 @@ TagManager:
   - hazard
   - blockDoor
   - button
+  - blueTimeBall
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class platformMove : MonoBehaviour
     public float dis;
     //移动速度
     public float speed;
+    public bool isInBlue;
     //水平移动为true 竖直移动为false
     public bool flag = true;
     //移动方向
@@ -36,30 +37,32 @@ public class platformMove : MonoBehaviour
 
 
     private void FixedUpdate() {
+        if (!isInBlue) {
+            if (flag) {
+                
+                m_Rigidbody.MovePosition(transform.GetComponent<Rigidbody2D>().position + directionOfPlatform * Time.fixedDeltaTime * new Vector2(speed, 0));
+                // m_Rigidbody.MovePosition(Mathf.PingPong(Time.time * speed, dis) * directionOfPlatform * new Vector3(1, 0, 0) + startPos);
+                if (directionOfPlatform == 1 && Vector3.Distance(endPos, transform.position) < 0.01f) {
+                    directionOfPlatform = - directionOfPlatform;
+                    
+                } else if (directionOfPlatform == -1 && Vector3.Distance(transform.position, startPos) < 0.01f) {
+                    directionOfPlatform = - directionOfPlatform;
+                    
+                }
 
-        if (flag) {
-            
-            m_Rigidbody.MovePosition(transform.GetComponent<Rigidbody2D>().position + directionOfPlatform * Time.fixedDeltaTime * new Vector2(speed, 0));
-            // m_Rigidbody.MovePosition(Mathf.PingPong(Time.time * speed, dis) * directionOfPlatform * new Vector3(1, 0, 0) + startPos);
-            if (directionOfPlatform == 1 && Vector3.Distance(endPos, transform.position) < 0.01f) {
-                directionOfPlatform = - directionOfPlatform;
                 
-            } else if (directionOfPlatform == -1 && Vector3.Distance(transform.position, startPos) < 0.01f) {
-                directionOfPlatform = - directionOfPlatform;
-                
-            }
-
-            
-        } else {
-            m_Rigidbody.MovePosition(Mathf.PingPong(Time.time * speed, dis) * directionOfPlatform * new Vector3(0, 1, 0) + startPos);
-            if (directionOfPlatform == 1 && Vector3.Distance(endPos, transform.position) < 0.01f) {
-                directionOfPlatform = - directionOfPlatform;
-                
-            } else if (directionOfPlatform == -1 && Vector3.Distance(transform.position, startPos) < 0.01f) {
-                directionOfPlatform = - directionOfPlatform;
-                
-            }
-        }        
+            } else {
+                m_Rigidbody.MovePosition(Mathf.PingPong(Time.time * speed, dis) * directionOfPlatform * new Vector3(0, 1, 0) + startPos);
+                if (directionOfPlatform == 1 && Vector3.Distance(endPos, transform.position) < 0.01f) {
+                    directionOfPlatform = - directionOfPlatform;
+                    
+                } else if (directionOfPlatform == -1 && Vector3.Distance(transform.position, startPos) < 0.01f) {
+                    directionOfPlatform = - directionOfPlatform;
+                    
+                }
+            } 
+        }
+       
         
     }
 }
