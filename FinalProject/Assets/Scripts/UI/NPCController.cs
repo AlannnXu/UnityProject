@@ -10,7 +10,8 @@ public class NPCController : MonoBehaviour
     public GameObject icon;
     public TextMeshProUGUI diaText;
     private bool ableToTalk = false;
-
+    private bool isLighted = false;
+    private int index = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -22,15 +23,23 @@ public class NPCController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((this.transform.position - playerPos.position).magnitude < 3f)
+        if((this.transform.position - playerPos.position).magnitude < 3f && !isLighted)
         {
             icon.SetActive(true);
+            isLighted = true;
             ableToTalk = true;
+        }
+        else if((this.transform.position - playerPos.position).magnitude >= 3f)
+        {
+            icon.SetActive(false);
+            isLighted = false; 
         }
 
         if(Input.GetKeyDown(KeyCode.E) && ableToTalk)
         {
-            diaText.text = "asdada";
+            index++;
+            icon.SetActive(false);
+            diaText.text = "asdads";
 
         }
     }
