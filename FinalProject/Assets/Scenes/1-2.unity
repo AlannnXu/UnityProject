@@ -469,6 +469,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: laser (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8780131365735849389, guid: b82c5fc884bf56841a2eda3f5448e538,
+        type: 3}
+      propertyPath: direction
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b82c5fc884bf56841a2eda3f5448e538, type: 3}
 --- !u!4 &155028271 stripped
@@ -1979,6 +1984,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: laser (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780131365735849389, guid: b82c5fc884bf56841a2eda3f5448e538,
+        type: 3}
+      propertyPath: direction
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b82c5fc884bf56841a2eda3f5448e538, type: 3}
@@ -7842,6 +7852,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: laser (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8780131365735849389, guid: b82c5fc884bf56841a2eda3f5448e538,
+        type: 3}
+      propertyPath: direction
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b82c5fc884bf56841a2eda3f5448e538, type: 3}
 --- !u!1 &1004189984
@@ -9369,6 +9384,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: laser (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8780131365735849389, guid: b82c5fc884bf56841a2eda3f5448e538,
+        type: 3}
+      propertyPath: direction
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b82c5fc884bf56841a2eda3f5448e538, type: 3}
 --- !u!1001 &1678190840
@@ -10682,7 +10702,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085223017}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.103214, y: 2.7877111, z: -9.88}
+  m_LocalPosition: {x: -22.416777, y: 2.7903748, z: -9.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 949670412}
@@ -10889,6 +10909,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780131365735849389, guid: b82c5fc884bf56841a2eda3f5448e538,
+        type: 3}
+      propertyPath: direction
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b82c5fc884bf56841a2eda3f5448e538, type: 3}
