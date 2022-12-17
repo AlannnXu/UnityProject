@@ -2258,7 +2258,10 @@ MonoBehaviour:
   groundCheck: {fileID: 3874863280458649225}
   shieldPrefab: {fileID: 2220299470861201534}
   rightHandPrefab: {fileID: 2250887623968555113}
+  leftHandPrefab: {fileID: 8369042097598683900}
   buleTimeBall: {fileID: 9042404784513298837, guid: 3c17dbe040b7fd04bad3554fd994ed46,
+    type: 3}
+  thunderBall: {fileID: 1825721537566894948, guid: f7cf18a701f18c741b0ba6d9ba4f9fef,
     type: 3}
   platformScript: {fileID: 0}
   buttonScript: {fileID: 0}

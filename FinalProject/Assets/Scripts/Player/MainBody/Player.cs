@@ -10,8 +10,10 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform shieldPrefab;
     [SerializeField] private Transform rightHandPrefab;
+    [SerializeField] private Transform leftHandPrefab;
 
     [SerializeField] private Transform buleTimeBall;
+    [SerializeField] private Transform thunderBall;
 
     [SerializeField] private platformMove platformScript;
     [SerializeField] private Buttons buttonScript;
@@ -95,6 +97,11 @@ public class Player : MonoBehaviour
             if (status >= 2 && Input.GetKeyDown(KeyCode.K)) {
                 if (GameObject.FindWithTag("blueTimeBall") == null)
                     Instantiate(buleTimeBall, transform.position, transform.rotation);
+            }
+            if (status >= 4 && Input.GetKeyDown(KeyCode.L)) {
+                if (GameObject.FindWithTag("thunderBall") == null) {
+                    Instantiate(thunderBall, rightHandPrefab.position + Vector3.up * 0.2f, transform.rotation);
+                }
             }
         }
     }
@@ -296,7 +303,7 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         if (shieldOut && other.gameObject.tag == "shield") {
 
-            other.transform.parent = rightHandPrefab;
+            other.transform.parent = leftHandPrefab;
             other.transform.localPosition = Vector3.zero;
             other.transform.localRotation = Quaternion.identity;
             Destroy(other.transform.GetComponent<Rigidbody2D>());

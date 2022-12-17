@@ -13,6 +13,7 @@ TagManager:
   - blockDoor
   - button
   - blueTimeBall
+  - thunderBall
   layers:
   - Default
   - TransparentFX

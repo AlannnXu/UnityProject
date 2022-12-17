@@ -31,7 +31,7 @@ public class BlueTimeBall : MonoBehaviour
             case "blockDoor":
             //     buttonScript = other.gameObject.GetComponent<
                 isFound = false;
-                Debug.Log("ss");
+
                 foreach (GameObject b_i in buttons) {
                     Debug.Log("button name" + b_i.name);
                     buttonScript = b_i.GetComponent<Buttons>();
