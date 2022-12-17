@@ -309,7 +309,7 @@ public class Player : MonoBehaviour
     public void OnCollisionStay2D(Collision2D other) {
         if (other.gameObject.tag == "platform") {
             platformScript = other.gameObject.GetComponent<platformMove>();
-            if (platformScript.flag) {
+            if (platformScript.flag && !platformScript.isInBlue) {
 
                 transform.position = new Vector3(transform.position.x + platformScript.directionOfPlatform * platformScript.speed * Time.deltaTime,
                 transform.position.y, transform.position.z);
