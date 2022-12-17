@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6378456405775481831}
   - component: {fileID: 5207267118337545118}
   - component: {fileID: 5268351424706420680}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: blueTimeBall
   m_TagString: blueTimeBall
   m_Icon: {fileID: 0}

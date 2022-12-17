@@ -14,6 +14,8 @@ public class laser : MonoBehaviour
     private float timer;
     private float timer_laser;
 
+    public float delay;
+
 
 
     void Start()
@@ -25,40 +27,51 @@ public class laser : MonoBehaviour
         lineRenderer.useWorldSpace = true;
 
         timer = countDown;
+
+        //StartCoroutine(ExampleCoroutine());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(timer > 0)
+        if(delay >= 0)
         {
-            timer -= Time.deltaTime;
-            if(lineRenderer.enabled == true)
-            {
-                if(timer_laser > 0)
-                {
-
-                    timer_laser -= Time.deltaTime;
-                }
-                else
-                {
-                    lineRenderer.enabled = false;
-                }
-
-            }
+            delay -= Time.deltaTime;
         }
         else
         {
-            timer = countDown;
-            lineRenderer.enabled = true;
-            timer_laser = lastingTime;
-        }
+            if (timer > 0)
+            {
+                timer -= Time.deltaTime;
+                if(lineRenderer.enabled == true)
+                {
+                    if(timer_laser > 0)
+                    {
+
+                        timer_laser -= Time.deltaTime;
+                    }
+                    else
+                    {
+                        lineRenderer.enabled = false;
+                    }
+
+                }
+            }
+            else
+            {
+                timer = countDown;
+                lineRenderer.enabled = true;
+                timer_laser = lastingTime;
+            }
 
 
-        if(lineRenderer.enabled == true)
-        {
-            Shoot();
+            if(lineRenderer.enabled == true)
+            {
+                Shoot();
+            }
+
         }
+
     }
 
     void Shoot()
@@ -68,22 +81,21 @@ public class laser : MonoBehaviour
         if(direction == 0)
         {
 
-            hit = Physics2D.Raycast(transform.position, Vector2.down, 1000, (1 << 8) | (1 << 10) | (1 << 11) | (1 << 12) | (1 << 9) | (1 << 13)) ;
+            hit = Physics2D.Raycast(transform.position, Vector2.down, 1000, (1 << 8) | (1 << 10) | (1 << 11) | (1 << 12) | (1 << 9) | (1 << 13) | (1 << 15));
         }
         else if(direction == 1)
         {
 
-            hit = Physics2D.Raycast(transform.position, Vector2.left, 1000, (1 << 8) | (1 << 10) | (1 << 11) | (1 << 12) | (1 << 9) | (1 << 13)) ;
+            hit = Physics2D.Raycast(transform.position, Vector2.left, 1000, (1 << 8) | (1 << 10) | (1 << 11) | (1 << 12) | (1 << 9) | (1 << 13) | (1 << 15));
         }
         else if(direction == 2)
         {
-            hit = Physics2D.Raycast(transform.position, Vector2.right, 1000, (1 << 8) | (1 << 10) | (1 << 11) | (1 << 12) | (1 << 9) | (1 << 13)) ;
+            hit = Physics2D.Raycast(transform.position, Vector2.right, 1000, (1 << 8) | (1 << 10) | (1 << 11) | (1 << 12) | (1 << 9) | (1 << 13) | (1 << 15));
 
         }
         else
         {
-
-            hit = Physics2D.Raycast(transform.position, Vector2.up, 1000, (1 << 8) | (1 << 10) | (1 << 11) | (1 << 12) | (1 << 9) | (1 << 13)) ;
+            hit = Physics2D.Raycast(transform.position, Vector2.up, 1000, (1 << 8) | (1 << 10) | (1 << 11) | (1 << 12) | (1 << 9) | (1 << 13) | (1 << 15));
         }
 
         if (hit)
@@ -106,4 +118,10 @@ public class laser : MonoBehaviour
 
 
     }
+
+    //IEnumerator ExampleCoroutine()
+    //{
+    //    Debug.Log("Wait");
+    //    yield return new WaitForSeconds(delay);
+    //}
 }

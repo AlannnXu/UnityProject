@@ -2269,12 +2269,12 @@ MonoBehaviour:
   animator: {fileID: 9146699619342577471}
   RunSound: {fileID: 0}
   jumpSound: {fileID: 0}
-  speed: 5
+  speed: 3
   haveShield: 1
-  status: 1
+  status: 2
   throwForce: 0
   shieldOut: 0
-  jumpForce: 6
+  jumpForce: 5
   superJumpForce: 8
   jumpCount: 0
   isOnGround: 0
