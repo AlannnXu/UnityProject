@@ -5,7 +5,7 @@ using UnityEngine;
 public class Buttons : MonoBehaviour
 {
     public Transform correspondingBlockDoor;
-    public bool isHorizontal;
+    public bool forceStop;
     private Vector3 initPos;
     public bool isOnButton;
     public bool isNeedToIncrease;
@@ -21,12 +21,15 @@ public class Buttons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isOnButton && isNeedToIncrease) {
+        if (!isOnButton && isNeedToIncrease && !forceStop) {
                 transform.position = new Vector3(transform.position.x, 
                     transform.position.y + buttonSpeed * Time.deltaTime, transform.position.z);
                 correspondingBlockDoor.position = new Vector3(correspondingBlockDoor.position.x, 
                     correspondingBlockDoor.position.y + DoorSpeed * Time.deltaTime, correspondingBlockDoor.position.z);  
-                if (Vector3.Distance(transform.position, initPos) < 0.01f) isNeedToIncrease = false;        
+                if (Vector3.Distance(transform.position, initPos) < 0.01f) {
+                    isNeedToIncrease = false; 
+                    forceStop = true;
+                }       
         }
     }
 

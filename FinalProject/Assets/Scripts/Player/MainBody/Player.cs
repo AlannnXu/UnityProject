@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private platformMove platformScript;
     [SerializeField] private Buttons buttonScript;
+    [SerializeField] private Buttons buttonScript2;
 
     // 物理材料
     public PhysicsMaterial2D p1;    // 有摩擦力的
@@ -115,6 +116,7 @@ public class Player : MonoBehaviour
                 GameObject outShield = GameObject.FindWithTag("shield");
                 outShield.transform.parent = null;
                 outShield.AddComponent<Rigidbody2D>();
+                outShield.GetComponent<Rigidbody2D>().mass = 10;
                 if (transform.localScale.x > 0) {
                     outShield.GetComponent<Rigidbody2D>().velocity = new Vector2(-throwForce,outShield.GetComponent<Rigidbody2D>().velocity.y);
                 } else {
@@ -159,11 +161,35 @@ public class Player : MonoBehaviour
     {
         ////判断角色碰撞器与button图层发生接触
         GameObject outShield = GameObject.FindWithTag("shield");
-        if (Physics2D.OverlapCircle(groundCheck.position, 0.1f, buttonLayer) || Physics2D.OverlapCircle(outShield.transform.position, 0.5f, buttonLayer)) 
+        if (Physics2D.OverlapCircle(groundCheck.position, 0.1f, buttonLayer) || Physics2D.OverlapCircle(outShield.transform.position, 0.4f, buttonLayer)) 
         {
             if (buttonScript != null) {
                 buttonScript.isOnButton = true;
             } 
+            if ((!Physics2D.OverlapCircle(groundCheck.position, 0.1f, buttonLayer)) && Physics2D.OverlapCircle(outShield.transform.position, 0.4f, buttonLayer)) {
+                if (buttonScript != null) {
+                    if (buttonScript2 != null) {
+                        if (buttonScript2 != buttonScript) {
+                            if (buttonScript.isOnButton) {
+                                buttonScript.isNeedToIncrease = true; 
+                            }
+                            buttonScript.isOnButton = false;
+                        }
+                        
+                    } else {
+                        if (buttonScript.isOnButton) {
+                            
+                            buttonScript2 = buttonScript;
+                        } 
+                    }
+                   
+                    
+                }
+                
+            }
+            if (!Physics2D.OverlapCircle(outShield.transform.position, 0.4f, buttonLayer)) {
+                buttonScript2 = null;
+            }
             
 
         }
@@ -288,14 +314,14 @@ public class Player : MonoBehaviour
                 transform.position.y, transform.position.z);
             }
         } else if (other.gameObject.tag == "button") {
-            Debug.Log("pengdaole");
+
             buttonScript = other.gameObject.GetComponent<Buttons>();
-            if (!buttonScript.isHorizontal) {
-                buttonScript.correspondingBlockDoor.position = new Vector3(buttonScript.correspondingBlockDoor.position.x, 
-                    buttonScript.correspondingBlockDoor.position.y - buttonScript.DoorSpeed * Time.deltaTime, buttonScript.correspondingBlockDoor.position.z);
-                other.gameObject.transform.position = new Vector3(other.gameObject.transform.position.x, 
-                    other.gameObject.transform.position.y - buttonScript.buttonSpeed * Time.deltaTime, other.gameObject.transform.position.z);         
-            }
+
+            buttonScript.correspondingBlockDoor.position = new Vector3(buttonScript.correspondingBlockDoor.position.x, 
+                buttonScript.correspondingBlockDoor.position.y - buttonScript.DoorSpeed * Time.deltaTime, buttonScript.correspondingBlockDoor.position.z);
+            other.gameObject.transform.position = new Vector3(other.gameObject.transform.position.x, 
+                other.gameObject.transform.position.y - buttonScript.buttonSpeed * Time.deltaTime, other.gameObject.transform.position.z);         
+            buttonScript.forceStop = false;
         }     
     }
 
