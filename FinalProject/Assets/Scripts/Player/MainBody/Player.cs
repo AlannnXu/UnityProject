@@ -81,6 +81,13 @@ public class Player : MonoBehaviour
         animator.Play("0_idle");
         keyNum = 0;
         rb.sharedMaterial = p1;
+        if (status > 1) {
+            speed = 4f;
+            jumpForce = 5.5f;
+        } else {
+            speed = 3f;
+            jumpForce = 5f;
+        }
     }
 
 

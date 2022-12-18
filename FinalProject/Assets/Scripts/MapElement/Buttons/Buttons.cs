@@ -5,6 +5,7 @@ using UnityEngine;
 public class Buttons : MonoBehaviour
 {
     public Transform correspondingBlockDoor;
+    public Transform correspondingBlockDoor2;
     public bool forceStop;
     private Vector3 initPos;
     public bool isOnButton;
