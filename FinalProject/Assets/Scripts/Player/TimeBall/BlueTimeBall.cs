@@ -42,6 +42,9 @@ public class BlueTimeBall : MonoBehaviour
                     if (buttonScript.correspondingBlockDoor == other.transform) {
                         isFound = true;
                         break;
+                    } else if (buttonScript.correspondingBlockDoor2 == other.transform) {
+                        buttonScript.isInBlue2 = true;
+                        break;
                     }
                 }
                 if (isFound) {
@@ -77,6 +80,8 @@ public class BlueTimeBall : MonoBehaviour
             case "blockDoor":
                 if (isFound) {
                     buttonScript.isInBlue = false;
+                } else if (buttonScript.isInBlue2) {
+                    buttonScript.isInBlue2 = false;
                 }                
                 break;
         }        
