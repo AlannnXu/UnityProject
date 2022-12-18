@@ -190,7 +190,7 @@ public class Player : MonoBehaviour
             if (buttonScript != null) {
                 buttonScript.isOnButton = true;
             } 
-            if ((!Physics2D.OverlapCircle(groundCheck.position, 0.1f, buttonLayer)) && Physics2D.OverlapCircle(outShield.transform.position, 0.4f, buttonLayer)) {
+            if ((!Physics2D.OverlapCircle(groundCheck.position, 0.1f, buttonLayer)) && Physics2D.OverlapCircle(outShield.transform.position, 0.4f, buttonLayer) && shieldOut) {
                 if (buttonScript != null) {
                     if (buttonScript2 != null) {
                         if (buttonScript2 != buttonScript) {
