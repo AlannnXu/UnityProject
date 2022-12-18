@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7968530213268177332}
   - component: {fileID: 2044651581449229125}
+  - component: {fileID: 6784601120169839928}
   - component: {fileID: 7527757784772909171}
   m_Layer: 12
   m_Name: block door
@@ -61,6 +62,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.49826956, y: 1.4606771}
   m_EdgeRadius: 0
+--- !u!114 &6784601120169839928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7968530213268177335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e5dbae483a539648b410b4c912996e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &7527757784772909171
 Rigidbody2D:
   serializedVersion: 4
