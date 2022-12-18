@@ -9,13 +9,10 @@ public class NPCController : MonoBehaviour
 {
     public Transform playerPos;
     public GameObject icon;
-    public GameObject diaBlock;
-    public GameObject diaTextUI;
     public TextMeshProUGUI diaText;
     private bool ableToTalk = false;
     private bool isLighted = false;
     private bool isFinish = false;
-    private bool isTalking = false;
     private int index = 0;
     private int sceneNum;
     private List<string> aDia = new List<string>();
@@ -24,11 +21,8 @@ public class NPCController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        diaText = diaTextUI.GetComponent<TextMeshProUGUI>();
         sceneNum = SceneManager.GetActiveScene().buildIndex;
-        diaBlock.SetActive(false);
         icon.SetActive(false);
-        diaTextUI.SetActive(false);
         aDia.Add("Perseus, I am Athena, one of the virgin goddesses");
         aDia.Add("I have come to help you slay Medusa, for I cannot tolerate Medusa's presence");
         aDia.Add("As a mortal you are too weak, and I grant you magic treasures and my divine powers");
@@ -53,32 +47,18 @@ public class NPCController : MonoBehaviour
     {
         if((this.transform.position - playerPos.position).magnitude < 3f && !isLighted && !isFinish)
         {
-            if (!isTalking)
-            {
-                icon.SetActive(true);
-            }
-            else
-            {
-                diaBlock.SetActive(true);
-            }
-            diaTextUI.SetActive(true);
+            icon.SetActive(true);
             isLighted = true;
             ableToTalk = true;
         }
         else if((this.transform.position - playerPos.position).magnitude >= 3f)
         {
-            diaBlock.SetActive(false);
-            diaTextUI.SetActive(false);
             icon.SetActive(false);
             isLighted = false; 
         }
 
         if(Input.GetKeyDown(KeyCode.E) && ableToTalk)
         {
-            if (!isFinish)
-            {
-                diaBlock.SetActive(true);
-            }
             switch (sceneNum)
             {
                 case 3:
@@ -98,8 +78,6 @@ public class NPCController : MonoBehaviour
 
     private void SwitchaDia()
     {
-        isTalking = true;
-
         if (index < aDia.Count)
         {
             icon.SetActive(false);
@@ -114,7 +92,6 @@ public class NPCController : MonoBehaviour
 
     private void SwitchhDia()
     {
-        isTalking = true;
         if (index < hDia.Count)
         {
             icon.SetActive(false);
@@ -129,7 +106,6 @@ public class NPCController : MonoBehaviour
 
     private void SwitchzDia()
     {
-        isTalking = true;
         if (index < zDia.Count)
         {
             icon.SetActive(false);
