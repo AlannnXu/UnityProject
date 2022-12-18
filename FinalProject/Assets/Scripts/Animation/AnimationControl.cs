@@ -49,14 +49,14 @@ public class AnimationControl : MonoBehaviour
                     }
                 }
             }
-            else if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) && isRunning == 0)
+            else if (Input.GetKey(KeyCode.A) && isRunning == 0)
             {
                 animator.SetBool("IdleToRun", true);
                 animator.Play("1_Run");
                 isIdle = false;
                 isRunning = 1;
             }
-            else if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyUp(KeyCode.A)) && isRunning == 0)
+            else if (Input.GetKey(KeyCode.D) && isRunning == 0)
             {
                 animator.SetBool("IdleToRun", true);
                 animator.Play("1_Run");
