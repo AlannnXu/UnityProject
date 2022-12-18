@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AnimationControl : MonoBehaviour
 {
@@ -14,10 +15,11 @@ public class AnimationControl : MonoBehaviour
     private int isRunning = 0;//0 静止 1 左 2 右
     private bool isJumping = false;
     private bool exBall = false;
+    private int index;
     // Start is called before the first frame update
     void Start()
     {
-
+        index = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
@@ -65,7 +67,7 @@ public class AnimationControl : MonoBehaviour
             ResetAnimator();
 
             //扔球
-            if (Input.GetKeyDown(KeyCode.L) && (GameObject.Find("thunderBall(Clone)") == null))
+            if (Input.GetKeyDown(KeyCode.L) && (GameObject.Find("thunderBall(Clone)") == null) && index >8)
             {
                 animator.Update(0);
                 animator.Play("2_Attack_Normal");
