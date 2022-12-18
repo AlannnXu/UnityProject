@@ -2263,6 +2263,7 @@ MonoBehaviour:
     type: 3}
   thunderBall: {fileID: 1825721537566894948, guid: f7cf18a701f18c741b0ba6d9ba4f9fef,
     type: 3}
+  thunderBallScript: {fileID: 0}
   platformScript: {fileID: 0}
   buttonScript: {fileID: 0}
   buttonScript2: {fileID: 0}
@@ -2324,8 +2325,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009703095, y: 0.42299652}
-  m_Size: {x: 0.5194064, y: 0.8005829}
+  m_Offset: {x: -0.009703088, y: 0.39434814}
+  m_Size: {x: 0.5194064, y: 0.74328613}
   m_Direction: 0
 --- !u!114 &5862226812850127666
 MonoBehaviour:
