@@ -2286,7 +2286,7 @@ MonoBehaviour:
   isDead: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 22784
+    m_Bits: 88320
   buttonLayer:
     serializedVersion: 2
     m_Bits: 16384

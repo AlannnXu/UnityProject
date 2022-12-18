@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 284052051}
   - component: {fileID: 284052053}
   - component: {fileID: 284052052}
-  m_Layer: 5
+  m_Layer: 16
   m_Name: CountDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 560031919}
   - component: {fileID: 560031918}
   - component: {fileID: 560031917}
-  m_Layer: 5
+  m_Layer: 16
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 1825721537566894970}
   - component: {fileID: 1825721537566894949}
   - component: {fileID: 3559554025139314378}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: thunderBall
   m_TagString: thunderBall
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.004616976, y: 0.087696314}
