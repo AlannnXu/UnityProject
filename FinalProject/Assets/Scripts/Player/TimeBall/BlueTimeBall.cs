@@ -11,12 +11,12 @@ public class BlueTimeBall : MonoBehaviour
     public EnemyMove enemyScript;
     public Buttons buttonScript;
     public TextMeshProUGUI countDownText;
-    private float count = 6f;
+    private float count = 7f;
     // Start is called before the first frame update
     void Start()
     {
         buttons = GameObject.FindGameObjectsWithTag("button");
-        Invoke("DestroyTimeBlueBall", 5f);
+        Invoke("DestroyTimeBlueBall", 6f);
     }
 
     // Update is called once per frame

@@ -225,7 +225,7 @@ public class Player : MonoBehaviour
                 }
                 buttonScript.isOnButton = false;
             }             
-            // isOnButton = false;
+            isOnButton = false;
 
         }
         if (!Physics2D.OverlapCircle(outShield.transform.position, 0.4f, buttonLayer)) {
@@ -339,7 +339,7 @@ public class Player : MonoBehaviour
         } else if (other.gameObject.tag == "button") {
 
             buttonScript = other.gameObject.GetComponent<Buttons>();
-            if (buttonScript.correspondingBlockDoor != null) {
+            if (buttonScript.correspondingBlockDoor != null && !buttonScript.isInBlue) {
                 buttonScript.correspondingBlockDoor.position = new Vector3(buttonScript.correspondingBlockDoor.position.x, 
                     buttonScript.correspondingBlockDoor.position.y - buttonScript.DoorSpeed * Time.deltaTime, buttonScript.correspondingBlockDoor.position.z);
                 other.gameObject.transform.position = new Vector3(other.gameObject.transform.position.x, 
