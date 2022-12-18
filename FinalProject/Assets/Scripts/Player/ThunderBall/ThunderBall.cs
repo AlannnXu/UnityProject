@@ -49,6 +49,9 @@ public class ThunderBall : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         switch (other.gameObject.tag) {
             case "EnemyHead":
+                enemyScript = other.gameObject.GetComponent<EnemyMove>();
+                enemyScript.enemyDeath();
+                break;            
             case "EnemyBody":
                 enemyScript = other.gameObject.transform.parent.gameObject.GetComponent<EnemyMove>();
                 enemyScript.enemyDeath();

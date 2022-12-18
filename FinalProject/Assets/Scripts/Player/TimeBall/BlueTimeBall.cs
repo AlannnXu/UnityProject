@@ -49,6 +49,9 @@ public class BlueTimeBall : MonoBehaviour
                 }
                 break;                
             case "EnemyBody":
+                enemyScript = other.gameObject.GetComponent<EnemyMove>();
+                enemyScript.isInBlue = false;
+                break;            
             case "EnemyHead":
                 enemyScript = other.gameObject.transform.parent.GetComponent<EnemyMove>();
                 enemyScript.isInBlue = true;
@@ -64,6 +67,9 @@ public class BlueTimeBall : MonoBehaviour
                 platformScript.isInBlue = false;
                 break;
             case "EnemyBody":
+                enemyScript = other.gameObject.GetComponent<EnemyMove>();
+                enemyScript.isInBlue = false;
+                break;
             case "EnemyHead":
                 enemyScript = other.gameObject.transform.parent.GetComponent<EnemyMove>();
                 enemyScript.isInBlue = false;
