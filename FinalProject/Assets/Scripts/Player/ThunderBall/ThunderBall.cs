@@ -22,8 +22,17 @@ public class ThunderBall : MonoBehaviour
 
     void Update()
     {
-        count -= Time.deltaTime;
+        if (!isInBlue) {
+            count -= Time.deltaTime;
+        } else {
+            count -= Time.deltaTime / 20;
+        }
+        
         countDownText.text = Mathf.Floor(count).ToString();
+        if (Mathf.Floor(count) == 0) {
+            DestroyThunderBall();
+        }
+
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -48,8 +57,8 @@ public class ThunderBall : MonoBehaviour
                 isInBlue = true;
                 break;
         }
-        if (other.gameObject.tag != "Player" && other.gameObject.tag != "Finish" && other.gameObject.tag != "blueTimeBall")
-            Destroy(transform.gameObject);      
+        if (other.gameObject.tag != "Player" && other.gameObject.tag != "Finish" && other.gameObject.tag != "blueTimeBall" && other.gameObject.tag != "Key")
+            DestroyThunderBall();     
     }
 
     private void OnTriggerExit2D(Collider2D other) {
@@ -61,5 +70,9 @@ public class ThunderBall : MonoBehaviour
                 isInBlue = false;
                 break;
         }
+    }
+
+    public void DestroyThunderBall() {
+        Destroy(transform.gameObject);
     }
 }
