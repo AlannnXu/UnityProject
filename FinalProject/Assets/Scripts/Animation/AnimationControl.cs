@@ -24,44 +24,52 @@ public class AnimationControl : MonoBehaviour
     void Update()
     {
         //移动跳跃
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!player.isDead)
         {
-            if(player.isOnGround)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (isRunning > 0)
+                if (player.isOnGround)
                 {
-                    animator.Update(0);
-                    animator.Play("5_Skill_Magic");
-                    isIdle = false;
-                    isJumping = true;
-                }
-                else
-                {
-                    animator.Update(0);
-                    animator.Play("5_Skill_Magic");
-                    isIdle = false;
-                    isJumping = true;
+                    if (isRunning > 0)
+                    {
+                        animator.Update(0);
+                        animator.Play("5_Skill_Magic");
+                        isIdle = false;
+                        isJumping = true;
+                    }
+                    else
+                    {
+                        animator.Update(0);
+                        animator.Play("5_Skill_Magic");
+                        isIdle = false;
+                        isJumping = true;
+                    }
                 }
             }
-        }else if((Input.GetKeyDown(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) && isRunning == 0)
-        {
-            animator.SetBool("IdleToRun", true);
-            isIdle=false;
-            isRunning = 1;
-        }else if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyUp(KeyCode.A)) && isRunning == 0)
-        {
-            animator.SetBool("IdleToRun", true);
-            isIdle = false;
-            isRunning = 2;
-        }
+            else if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) && isRunning == 0)
+            {
+                animator.SetBool("IdleToRun", true);
+                animator.Play("1_Run");
+                isIdle = false;
+                isRunning = 1;
+            }
+            else if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyUp(KeyCode.A)) && isRunning == 0)
+            {
+                animator.SetBool("IdleToRun", true);
+                animator.Play("1_Run");
+                isIdle = false;
+                isRunning = 2;
+            }
 
-        ResetAnimator();
+            ResetAnimator();
 
-        //扔球
-        if (Input.GetKeyDown(KeyCode.L)&&(GameObject.Find("thunderBall(Clone)") == null)){
-            Debug.Log("asdada");
-            animator.Update(0);
-            animator.Play("2_Attack_Normal");
+            //扔球
+            if (Input.GetKeyDown(KeyCode.L) && (GameObject.Find("thunderBall(Clone)") == null))
+            {
+                Debug.Log("asdada");
+                animator.Update(0);
+                animator.Play("2_Attack_Normal");
+            }
         }
     }
 
@@ -91,6 +99,7 @@ public class AnimationControl : MonoBehaviour
             animator.SetBool("RunToJump", false);
             animator.SetBool("JumpToJump", false);
             animator.Update(0f);
+            animator.Play("0_idle");
             isIdle = true;
             isJumping = false;
         }
