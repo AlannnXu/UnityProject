@@ -45,22 +45,40 @@ public class ThunderBall : MonoBehaviour
             
     }
 
+    private void OnCollisionEnter2D(Collision2D other) {
+        // switch (other.gameObject.tag) {
+
+        // }
+        Debug.Log(Time.time + ":进入thunder ball collision的对象是：" + other.gameObject.name);
+        if (other.gameObject.tag != "Player") {
+            DestroyThunderBall();
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other) {
+        Debug.Log(Time.time + ":离开thunder ball collision的对象是：" + other.gameObject.name);
+        // switch (other.gameObject.tag) {
+
+        // }        
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log(Time.time + ":进入thunder ball trigger的对象是：" + other.gameObject.name);
         switch (other.gameObject.tag) {
             case "EnemyHead":
-                enemyScript = other.gameObject.GetComponent<EnemyMove>();
+                enemyScript = other.gameObject.transform.parent.gameObject.GetComponent<EnemyMove>();
                 enemyScript.enemyDeath();
                 break;            
             case "EnemyBody":
-                enemyScript = other.gameObject.transform.parent.gameObject.GetComponent<EnemyMove>();
+                enemyScript = other.gameObject.GetComponent<EnemyMove>();
                 enemyScript.enemyDeath();
                 break;
             case "blueTimeBall":
                 isInBlue = true;
                 break;
         }
-        if (other.gameObject.tag != "Player" && other.gameObject.tag != "Finish" && other.gameObject.tag != "blueTimeBall" && other.gameObject.tag != "Key")
+        if (other.gameObject.tag != "blueTimeBall" && other.gameObject.tag != "Key" && other.gameObject.tag != "Finish")
             DestroyThunderBall();     
     }
 
