@@ -10,6 +10,7 @@ public class BlueTimeBall : MonoBehaviour
     public platformMove platformScript;
     public EnemyMove enemyScript;
     public Buttons buttonScript;
+    
     public TextMeshProUGUI countDownText;
     private float count = 7f;
     // Start is called before the first frame update

@@ -341,7 +341,14 @@ public class Player : MonoBehaviour
             if (platformScript.flag && !platformScript.isInBlue) {
 
                 transform.position = new Vector3(transform.position.x + platformScript.directionOfPlatform * platformScript.speed * Time.deltaTime,
-                transform.position.y, transform.position.z);
+                    transform.position.y, transform.position.z);
+            }
+        } else if (other.gameObject.tag == "thunderBall") {
+            if (!thunderBallScript.isInBlue) {
+                Debug.Log("on ball");
+                // transform.position = new Vector3(transform.position.x + thunderBallScript.direction * thunderBallScript.speed * Time.deltaTime,
+                //     transform.position.y, transform.position.z);
+                rb.MovePosition(rb.position + thunderBallScript.direction * new Vector2(thunderBallScript.speed, 0) * Time.deltaTime);
             }
         } else if (other.gameObject.tag == "button") {
 

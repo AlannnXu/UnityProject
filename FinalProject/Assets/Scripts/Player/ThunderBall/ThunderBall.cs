@@ -13,6 +13,7 @@ public class ThunderBall : MonoBehaviour
     public float speed = 10f;
     public float direction = 1;
     public bool isInBlue;
+    public LayerMask groundLayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +43,19 @@ public class ThunderBall : MonoBehaviour
         } else {
             m_Rigidbody.MovePosition(m_Rigidbody.position + direction * Time.fixedDeltaTime *  new Vector2(speed / 20, 0));
         }
+
+        if (Physics2D.OverlapCircle(transform.position, 0.3f, groundLayer)) 
+        {
+            DestroyThunderBall();
+        }
             
+    }
+
+    void isOnGroundCheck()
+    {
+
+
+   
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
