@@ -83,10 +83,10 @@ public class Player : MonoBehaviour
         rb.sharedMaterial = p1;
         if (status > 1) {
             speed = 4f;
-            jumpForce = 5.5f;
+            jumpForce = 6f;
         } else {
             speed = 3f;
-            jumpForce = 5f;
+            jumpForce = 6f;
         }
     }
 
