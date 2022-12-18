@@ -28,6 +28,7 @@ public class AnimationControl : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                
                 if (player.isOnGround)
                 {
                     if (isRunning > 0)
@@ -66,7 +67,6 @@ public class AnimationControl : MonoBehaviour
             //扔球
             if (Input.GetKeyDown(KeyCode.L) && (GameObject.Find("thunderBall(Clone)") == null))
             {
-                Debug.Log("asdada");
                 animator.Update(0);
                 animator.Play("2_Attack_Normal");
             }
@@ -75,33 +75,44 @@ public class AnimationControl : MonoBehaviour
 
     private void ResetAnimator()
     {
- 
-        if(Input.GetKeyUp(KeyCode.A)&& isRunning == 1)
+
+        if (Input.GetKeyUp(KeyCode.A) && isRunning == 1) //A停
         {
             animator.SetBool("IdleToRun", false);
             animator.Play("0_idle");
             isIdle = true;
             isRunning = 0;
-        }else if(Input.GetKeyUp(KeyCode.D) && isRunning == 2)
+        }
+        else if (Input.GetKeyUp(KeyCode.D) && isRunning == 2) //d停
         {
             animator.SetBool("IdleToRun", false);
             animator.Play("0_idle");
             isIdle = true;
             isRunning = 0;
-        }else if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+        }
+        else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))//a+d
         {
             isIdle = true;
             isRunning = 0;
-        }     
-        else if(isJumping == true && player.isOnGround)
+        }
+        else if (isJumping == true && player.isOnGround)//落地重置
         {
-            animator.SetBool("IdleToJump",false);
+            Debug.Log("asd");
+            animator.SetBool("IdleToJump", false);
             animator.SetBool("RunToJump", false);
-            animator.SetBool("JumpToJump", false);
-            animator.Update(0f);
-            animator.Play("0_idle");
             isIdle = true;
             isJumping = false;
+        }
+        else if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            
+            if (!isJumping)
+            {
+                animator.SetBool("IdleToRun", false);
+                isIdle = true;
+                isRunning = 0;
+                
+            }
         }
 
 
