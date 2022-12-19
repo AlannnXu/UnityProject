@@ -81,7 +81,8 @@ public class BlueTimeBall : MonoBehaviour
             case "blockDoor":
                 if (isFound) {
                     buttonScript.isInBlue = false;
-                } else if (buttonScript.isInBlue2) {
+                }
+                if (buttonScript.isInBlue2) {
                     buttonScript.isInBlue2 = false;
                 }                
                 break;
