@@ -8232,9 +8232,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
         type: 3}
-      propertyPath: status
-      value: 3
-      objectReference: {fileID: 0}
+      propertyPath: RunSound
+      value: 
+      objectReference: {fileID: 1263217438}
     - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
         type: 3}
       propertyPath: jumpSound
@@ -8242,19 +8242,9 @@ PrefabInstance:
       objectReference: {fileID: 1263217439}
     - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
         type: 3}
-      propertyPath: RunSound
+      propertyPath: deathSound
       value: 
-      objectReference: {fileID: 1263217438}
-    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
-        type: 3}
-      propertyPath: speed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
-        type: 3}
-      propertyPath: jumpForce
-      value: 5.5
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1191329272}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8143030f543438b46840d25e1ae7e739, type: 3}
 --- !u!1001 &922397444
@@ -8900,6 +8890,12 @@ Transform:
   m_Father: {fileID: 1946980679}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1191329272 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 452956651, guid: 220fcd1e54a92f240b21b96560228b90,
+    type: 3}
+  m_PrefabInstance: {fileID: 1263217437}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1203900451
 PrefabInstance:
   m_ObjectHideFlags: 0
