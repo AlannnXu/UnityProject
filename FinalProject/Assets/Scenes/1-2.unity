@@ -7110,7 +7110,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 29
-      m_TileSpriteIndex: 29
+      m_TileSpriteIndex: 30
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7423,11 +7423,11 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: -2458043297142743250, guid: 671b7a74b8674f640904585a5b02cb21,
       type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -6315858950360993308, guid: 671b7a74b8674f640904585a5b02cb21,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -2688519664476255228, guid: 671b7a74b8674f640904585a5b02cb21,
       type: 3}
@@ -10065,6 +10065,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 220fcd1e54a92f240b21b96560228b90, type: 3}
+--- !u!82 &1762542634 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 452956651, guid: 220fcd1e54a92f240b21b96560228b90,
+    type: 3}
+  m_PrefabInstance: {fileID: 1762542633}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1768691772
 GameObject:
   m_ObjectHideFlags: 0
@@ -10978,7 +10984,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085223017}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.475391, y: -4.610248, z: -9.82}
+  m_LocalPosition: {x: -21.660635, y: -4.606858, z: -9.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 949670412}
@@ -11751,5 +11757,10 @@ PrefabInstance:
       propertyPath: jumpSound
       value: 
       objectReference: {fileID: 929969057}
+    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
+        type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 1762542634}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8143030f543438b46840d25e1ae7e739, type: 3}

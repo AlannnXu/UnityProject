@@ -4548,6 +4548,11 @@ PrefabInstance:
       propertyPath: speed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
+        type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 1449167418}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8143030f543438b46840d25e1ae7e739, type: 3}
 --- !u!224 &1212774241 stripped
@@ -5825,6 +5830,12 @@ AudioSource:
 --- !u!82 &1449167417 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 4386375361754158485, guid: 220fcd1e54a92f240b21b96560228b90,
+    type: 3}
+  m_PrefabInstance: {fileID: 1449167415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1449167418 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 452956651, guid: 220fcd1e54a92f240b21b96560228b90,
     type: 3}
   m_PrefabInstance: {fileID: 1449167415}
   m_PrefabAsset: {fileID: 0}

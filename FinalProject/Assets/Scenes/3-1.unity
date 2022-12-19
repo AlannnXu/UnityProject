@@ -10560,7 +10560,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513468294}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.695879, y: -1.500303, z: -9.8}
+  m_LocalPosition: {x: -26.706467, y: -1.5003145, z: -9.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2000884599}
@@ -11027,6 +11027,11 @@ PrefabInstance:
       propertyPath: speed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
+        type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 1868594703}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8143030f543438b46840d25e1ae7e739, type: 3}
 --- !u!1001 &1662547603
@@ -12527,6 +12532,12 @@ AudioSource:
 --- !u!82 &1868594702 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 4386375361754158485, guid: 220fcd1e54a92f240b21b96560228b90,
+    type: 3}
+  m_PrefabInstance: {fileID: 1868594700}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1868594703 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 452956651, guid: 220fcd1e54a92f240b21b96560228b90,
     type: 3}
   m_PrefabInstance: {fileID: 1868594700}
   m_PrefabAsset: {fileID: 0}
