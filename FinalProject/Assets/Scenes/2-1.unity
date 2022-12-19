@@ -405,7 +405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67814577}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.418287, y: -4.644291, z: -9.67}
+  m_LocalPosition: {x: -27.418287, y: -4.644291, z: -9.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2037621449}
@@ -1167,7 +1167,7 @@ PrefabInstance:
     - target: {fileID: 1704473401948694422, guid: 8143030f543438b46840d25e1ae7e739,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.33
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 1704473401948694422, guid: 8143030f543438b46840d25e1ae7e739,
         type: 3}
@@ -1212,12 +1212,12 @@ PrefabInstance:
     - target: {fileID: 1704473401948694422, guid: 8143030f543438b46840d25e1ae7e739,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -7.09
+      value: -13.11
       objectReference: {fileID: 0}
     - target: {fileID: 1704473401948694422, guid: 8143030f543438b46840d25e1ae7e739,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.53
+      value: -1.31
       objectReference: {fileID: 0}
     - target: {fileID: 1704473401948694422, guid: 8143030f543438b46840d25e1ae7e739,
         type: 3}
@@ -1660,7 +1660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364039468}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.26, y: -5.3266716, z: -9.67}
+  m_LocalPosition: {x: -34.28, y: -5.106672, z: -9.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 641710610}
@@ -3860,7 +3860,7 @@ PrefabInstance:
     - target: {fileID: 3426386752231777527, guid: 7a17db953d03201429a1f996c2214587,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.62
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 3426386752231777527, guid: 7a17db953d03201429a1f996c2214587,
         type: 3}
@@ -3905,12 +3905,12 @@ PrefabInstance:
     - target: {fileID: 3426386752231777527, guid: 7a17db953d03201429a1f996c2214587,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -27.16
+      value: -28.86
       objectReference: {fileID: 0}
     - target: {fileID: 3426386752231777527, guid: 7a17db953d03201429a1f996c2214587,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5.31
+      value: -5.33
       objectReference: {fileID: 0}
     - target: {fileID: 3426386752231777527, guid: 7a17db953d03201429a1f996c2214587,
         type: 3}
