@@ -6,6 +6,7 @@ public class Buttons : MonoBehaviour
 {
     public Transform correspondingBlockDoor;
     public Transform correspondingBlockDoor2;
+    public Transform correspondingBlockDoorTmp;
     public BlockDoor blockDoorScript;
     public BlockDoor blockDoorScript2;
     public bool flag1;
@@ -55,7 +56,7 @@ public class Buttons : MonoBehaviour
                 }
 
  
-                if (Vector3.Distance(correspondingBlockDoor.position, initPos) < 0.01f) {
+                if (Vector3.Distance(correspondingBlockDoor.position, initPos) < 0.01f || correspondingBlockDoor.position.y > initPos.y) {
                     isNeedToIncrease = false; 
                     forceStop = true;
                 }   
@@ -78,7 +79,7 @@ public class Buttons : MonoBehaviour
                     forceStop2 = true;
                 }                
             } else {
-
+                
             }
 
 
