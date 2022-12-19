@@ -118,7 +118,7 @@ public class Player : MonoBehaviour
             if (status >= 2 && Input.GetKeyDown(KeyCode.K)) {
                 if (GameObject.FindWithTag("blueTimeBall") == null)
                 {
-                    Instantiate(buleTimeBall, transform.position, transform.rotation);
+                    Instantiate(buleTimeBall, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), transform.rotation);
                     effect2.SetActive(true);
                     Invoke("DestoryEffect2", effectTime);
                 }
