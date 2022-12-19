@@ -14,12 +14,17 @@ public class ThunderBall : MonoBehaviour
     public float direction = 1;
     public bool isInBlue;
     public LayerMask groundLayer;
+
+    public GameObject explode;
+    public float explodeTime;
     // Start is called before the first frame update
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
         
         transform.localScale = new Vector3(0.16f * (direction), 0.16f, 1);
+
+        explode.SetActive(false);
     }
 
     void Update()
@@ -32,7 +37,7 @@ public class ThunderBall : MonoBehaviour
         
         // countDownText.text = Mathf.Floor(count).ToString();
         if (Mathf.Floor(count) == 0) {
-            DestroyThunderBall();
+            Explode();
         }
 
     }
@@ -47,7 +52,7 @@ public class ThunderBall : MonoBehaviour
 
         if (Physics2D.OverlapCircle(transform.position, 0.3f, groundLayer)) 
         {
-            DestroyThunderBall();
+            Explode();
         }
             
     }
@@ -59,7 +64,7 @@ public class ThunderBall : MonoBehaviour
         // }
         Debug.Log(Time.time + ":进入thunder ball collision的对象是：" + other.gameObject.name);
         if (other.gameObject.tag != "Player") {
-            DestroyThunderBall();
+            Explode();
         }
     }
 
@@ -87,7 +92,7 @@ public class ThunderBall : MonoBehaviour
                 break;
         }
         if (other.gameObject.tag != "blueTimeBall" && other.gameObject.tag != "Key" && other.gameObject.tag != "Finish")
-            DestroyThunderBall();     
+            Explode();
     }
 
     private void OnTriggerExit2D(Collider2D other) {
@@ -101,7 +106,14 @@ public class ThunderBall : MonoBehaviour
         }
     }
 
+    public void Explode()
+    {
+        explode.SetActive(true);
+        Invoke("DestroyThunderBall", explodeTime);
+    }
     public void DestroyThunderBall() {
         Destroy(transform.gameObject);
     }
+
+    
 }
