@@ -61,11 +61,15 @@ public class Buttons : MonoBehaviour
                     forceStop = true;
                 }   
             } else {
+                if (!isInBlue2) {
+                    correspondingBlockDoorTmp = correspondingBlockDoor;
+                    correspondingBlockDoor = null;
+                }
 
             }
     
         }
-        if (!isOnButton && isNeedToIncrease2 && !forceStop2 && (correspondingBlockDoor2 != null) && !isInBlue2) {
+        if (!isOnButton && isNeedToIncrease2 && !forceStop2 && (correspondingBlockDoor2 != null)) {
             if (!isInBlue2) {
                 if (!flag2) {
                     correspondingBlockDoor2.position = new Vector3(correspondingBlockDoor2.position.x, 
