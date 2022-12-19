@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     [Header("音效")]
     public AudioSource RunSound;
     public AudioSource jumpSound;
-
+    public AudioSource deathSound;
 
     [Header("移动参数")]
     public float speed = 5f;
@@ -426,7 +426,7 @@ public class Player : MonoBehaviour
     public void PlayerDeath() {
         isDead = true;
         animator.Play("4_Death 1");
-        
+        deathSound.Play();
         Invoke("Reload", 1f);        
     }
 
