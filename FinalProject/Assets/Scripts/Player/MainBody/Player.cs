@@ -66,6 +66,12 @@ public class Player : MonoBehaviour
     public LayerMask groundLayer;
     public LayerMask buttonLayer;
 
+    [Header("效果")]
+    public GameObject effect1;
+    public GameObject effect2;
+    public GameObject effect3;
+    public float effectTime;
+
     //按键设置
     [SerializeField] bool jumpPress;
     bool shieldPress;
@@ -88,6 +94,10 @@ public class Player : MonoBehaviour
             speed = 3f;
             jumpForce = 6f;
         }
+
+        effect1.SetActive(false);
+        effect2.SetActive(false);
+        effect3.SetActive(false);
     }
 
 
@@ -101,10 +111,17 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.J))
             {
                 shieldPress = true;
+
+                effect1.SetActive(true);
+                Invoke("DestoryEffect1", effectTime);
             }
             if (status >= 2 && Input.GetKeyDown(KeyCode.K)) {
                 if (GameObject.FindWithTag("blueTimeBall") == null)
+                {
                     Instantiate(buleTimeBall, transform.position, transform.rotation);
+                    effect2.SetActive(true);
+                    Invoke("DestoryEffect2", effectTime);
+                }
             }
             if (status >= 4 && Input.GetKeyDown(KeyCode.L)) {
                 if (GameObject.FindWithTag("thunderBall") == null) {
@@ -116,8 +133,11 @@ public class Player : MonoBehaviour
                     
                     thunderBallScript = GameObject.FindWithTag("thunderBall").GetComponent<ThunderBall>();
                     thunderBallScript.direction = -transform.localScale.x;
-                    
+
+                    effect3.SetActive(true);
+                    Invoke("DestoryEffect3", effectTime);
                 }
+                
             }
         }
     }
@@ -443,6 +463,22 @@ public class Player : MonoBehaviour
     private void Reload() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    void DestoryEffect1()
+    {
+        effect1.SetActive(false);
+    }
+    void DestoryEffect2()
+    {
+        effect2.SetActive(false);
+    }
+
+    void DestoryEffect3()
+    {
+        effect3.SetActive(false);
+    }
+
+
 
 
 }

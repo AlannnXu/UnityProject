@@ -7926,6 +7926,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 491633418, guid: 8143030f543438b46840d25e1ae7e739, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1704473401948694422, guid: 8143030f543438b46840d25e1ae7e739,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8046,16 +8050,6 @@ PrefabInstance:
       propertyPath: jumpSound
       value: 
       objectReference: {fileID: 2095256164}
-    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
-        type: 3}
-      propertyPath: speed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
-        type: 3}
-      propertyPath: status
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
         type: 3}
       propertyPath: deathSound
@@ -8432,31 +8426,6 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 4386375361403996145}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &720820889 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4588303413251658128, guid: 8143030f543438b46840d25e1ae7e739,
-    type: 3}
-  m_PrefabInstance: {fileID: 649133264}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &720820890 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9146699619342577471, guid: 8143030f543438b46840d25e1ae7e739,
-    type: 3}
-  m_PrefabInstance: {fileID: 649133264}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &720820893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 720820889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdf13798d8fe8154491fa46269962b0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyAnimation: {fileID: 720820890}
 --- !u!4 &731268002 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2369071503409894152, guid: 20414a4ffa0a1b94993aca7fcd7bdebb,
