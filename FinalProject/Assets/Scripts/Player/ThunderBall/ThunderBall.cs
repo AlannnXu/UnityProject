@@ -6,7 +6,7 @@ using UnityEngine;
 public class ThunderBall : MonoBehaviour
 {
     Rigidbody2D m_Rigidbody;
-    public TextMeshProUGUI countDownText;
+    // public TextMeshProUGUI countDownText;
     private float count = 4f;
     // public Transform player;
     public EnemyMove enemyScript;
@@ -18,18 +18,19 @@ public class ThunderBall : MonoBehaviour
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
-        // direction = player.localScale.x;
+        
+        transform.localScale = new Vector3(0.16f * (direction), 0.16f, 1);
     }
 
     void Update()
     {
-        if (!isInBlue) {
-            count -= Time.deltaTime;
-        } else {
-            count -= Time.deltaTime / 20;
-        }
+        // if (!isInBlue) {
+        //     count -= Time.deltaTime;
+        // } else {
+        //     count -= Time.deltaTime / 20;
+        // }
         
-        countDownText.text = Mathf.Floor(count).ToString();
+        // countDownText.text = Mathf.Floor(count).ToString();
         if (Mathf.Floor(count) == 0) {
             DestroyThunderBall();
         }
@@ -51,12 +52,6 @@ public class ThunderBall : MonoBehaviour
             
     }
 
-    void isOnGroundCheck()
-    {
-
-
-   
-    }
 
     private void OnCollisionEnter2D(Collision2D other) {
         // switch (other.gameObject.tag) {

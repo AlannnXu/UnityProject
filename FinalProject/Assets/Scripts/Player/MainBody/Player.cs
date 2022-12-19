@@ -108,9 +108,15 @@ public class Player : MonoBehaviour
             }
             if (status >= 4 && Input.GetKeyDown(KeyCode.L)) {
                 if (GameObject.FindWithTag("thunderBall") == null) {
-                    Instantiate(thunderBall, rightHandPrefab.position + Vector3.up * 0.2f + Vector3.right * 1.1f, transform.rotation);
+                    if (transform.localScale.x < 0) {
+                        Instantiate(thunderBall, rightHandPrefab.position + Vector3.up * 0.2f + Vector3.right * 1.1f, transform.rotation);
+                    } else {
+                        Instantiate(thunderBall, rightHandPrefab.position + Vector3.up * 0.2f + Vector3.left * 1.1f, transform.rotation);
+                    }
+                    
                     thunderBallScript = GameObject.FindWithTag("thunderBall").GetComponent<ThunderBall>();
                     thunderBallScript.direction = -transform.localScale.x;
+                    
                 }
             }
         }

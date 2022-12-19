@@ -17,6 +17,7 @@ public class BlueTimeBall : MonoBehaviour
     void Start()
     {
         buttons = GameObject.FindGameObjectsWithTag("button");
+        
         Invoke("DestroyTimeBlueBall", 6f);
     }
 
