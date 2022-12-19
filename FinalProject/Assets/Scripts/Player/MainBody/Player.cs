@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     private Rigidbody2D rb;
     private Collider2D coll;
-
+    private int count = 0;
     [Header("音效")]
     public AudioSource RunSound;
     public AudioSource jumpSound;
@@ -108,7 +108,7 @@ public class Player : MonoBehaviour
             }
             if (status >= 4 && Input.GetKeyDown(KeyCode.L)) {
                 if (GameObject.FindWithTag("thunderBall") == null) {
-                    Instantiate(thunderBall, rightHandPrefab.position + Vector3.up * 0.2f, transform.rotation);
+                    Instantiate(thunderBall, rightHandPrefab.position + Vector3.up * 0.2f + Vector3.right * 1.1f, transform.rotation);
                     thunderBallScript = GameObject.FindWithTag("thunderBall").GetComponent<ThunderBall>();
                     thunderBallScript.direction = -transform.localScale.x;
                 }
@@ -425,8 +425,12 @@ public class Player : MonoBehaviour
 
     public void PlayerDeath() {
         isDead = true;
-        animator.Play("4_Death 1");
-        deathSound.Play();
+        if (count == 0)
+        {
+            animator.Play("4_Death 1");
+            deathSound.Play();
+            count++;
+        }
         Invoke("Reload", 1f);        
     }
 
