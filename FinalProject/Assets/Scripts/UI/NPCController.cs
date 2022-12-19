@@ -36,7 +36,8 @@ public class NPCController : MonoBehaviour
         aDia.Add("Now, move on");
         hDia.Add("Perseus, I am Hermes, messenger of the gods");
         hDia.Add("Since Athena has given you my shoes, it is necessary for me to help you");
-        hDia.Add("I give you the power of the wind, which binds all things. I hope you will use it well");
+        hDia.Add("I give you the power of the wind, which binds all things");
+        hDia.Add("I hope you will use it well");
         hDia.Add("Now, move on");
         zDia.Add("Perseus, my child");
         zDia.Add("It's the first time I've seen you, but the scent of you tells me you are my child");
