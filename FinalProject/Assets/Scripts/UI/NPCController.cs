@@ -86,13 +86,13 @@ public class NPCController : MonoBehaviour
             }
             switch (sceneNum)
             {
-                case 4:
+                case 3:
                     SwitchaDia();
                     break;
-                case 7:
+                case 6:
                     SwitchhDia();
                     break;
-                case 10:
+                case 9:
                     SwitchzDia();
                     break;
 
