@@ -7858,10 +7858,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPos: {fileID: 317439067}
+  playerScript: {fileID: 1199573483}
   icon: {fileID: 360096399}
   diaBlock: {fileID: 924205373}
   diaTextUI: {fileID: 1068092340}
   diaText: {fileID: 0}
+  isFinish: 0
 --- !u!1001 &750841282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9649,6 +9651,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1199573483 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
+    type: 3}
+  m_PrefabInstance: {fileID: 1653037914}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97501b7a617f0f546ab98e892674a277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1220307948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10732,7 +10746,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513468294}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.706467, y: -1.5003145, z: -9.8}
+  m_LocalPosition: {x: -26.138962, y: -1.4996986, z: -9.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2000884599}
@@ -11198,7 +11212,7 @@ PrefabInstance:
     - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
         type: 3}
       propertyPath: status
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
         type: 3}
