@@ -44,7 +44,7 @@ public class Buttons : MonoBehaviour
     void Update()
     {
         if (!isOnButton && isNeedToIncrease && !forceStop && (correspondingBlockDoor != null)) {
-            if (!isInBlue) {
+            if (!isInBlue && !isInBlue2) {
                 transform.position = new Vector3(transform.position.x, 
                     transform.position.y + buttonSpeed * Time.deltaTime, transform.position.z);            
                 if (!flag1) {
@@ -61,16 +61,13 @@ public class Buttons : MonoBehaviour
                     forceStop = true;
                 }   
             } else {
-                if (!isInBlue2) {
-                    correspondingBlockDoorTmp = correspondingBlockDoor;
-                    correspondingBlockDoor = null;
-                }
+
 
             }
     
         }
         if (!isOnButton && isNeedToIncrease2 && !forceStop2 && (correspondingBlockDoor2 != null)) {
-            if (!isInBlue2) {
+            if (!isInBlue2 && !isInBlue) {
                 if (!flag2) {
                     correspondingBlockDoor2.position = new Vector3(correspondingBlockDoor2.position.x, 
                         correspondingBlockDoor2.position.y + DoorSpeed * Time.deltaTime, correspondingBlockDoor2.position.z);
@@ -78,7 +75,7 @@ public class Buttons : MonoBehaviour
                     correspondingBlockDoor2.position = new Vector3(correspondingBlockDoor2.position.x - DoorSpeed * Time.deltaTime, 
                         correspondingBlockDoor2.position.y, correspondingBlockDoor2.position.z);                
                 }
-                if (Vector3.Distance(correspondingBlockDoor2.position, initPos2) < 0.01f) {
+                if (Vector3.Distance(correspondingBlockDoor2.position, initPos2) < 0.01f || (!flag2 && correspondingBlockDoor.position.y > initPos.y) || (flag2 && correspondingBlockDoor.position.x < initPos.x)) {
                     isNeedToIncrease2 = false; 
                     forceStop2 = true;
                 }                
