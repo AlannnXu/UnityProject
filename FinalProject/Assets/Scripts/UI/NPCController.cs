@@ -38,17 +38,18 @@ public class NPCController : MonoBehaviour
         aDia.Add("Now, go ahead!");
         hDia.Add("Perseus, I am Hermes, messenger of the gods.");
         hDia.Add("Since Athena has given you my shoes, it is necessary for me to help you.");
-        hDia.Add("I give you the power of the wind, which binds all things in an area.");
+        hDia.Add("I give you the power of the wind, which will make you move faster and jump higher.");
+        hDia.Add("When you release all power of wind, it will create an area that binds all things for you.");
         hDia.Add("I hope you will use it well.");
-        hDia.Add("Now, go ahead!");
+        hDia.Add("Now, keep moving!");
         zDia.Add("Perseus, my child.");
         zDia.Add("It's the first time I've seen you, but the scent of you tells me you are my child.");
         zDia.Add("I am Zeus, Lord of the Gods.");
         zDia.Add("Hermes has told me of your plight.");
         zDia.Add("Although I can't do anything directly, but I can give you some help.");
         zDia.Add("I give you the power of thunder and lightning.");
-        zDia.Add("it can carry you or destroy your enemies, use it well.");
-        zDia.Add("Now, go ahead!");
+        zDia.Add("it can carry you and destroy your enemies, use it well.");
+        zDia.Add("Go ahead, my son!");
     }
 
     // Update is called once per frame
