@@ -7,6 +7,7 @@ public class BlueTimeBall : MonoBehaviour
 {
     GameObject[] buttons;
     public bool isFound;
+    public bool isFound2;
     public platformMove platformScript;
     public EnemyMove enemyScript;
     public Buttons buttonScript;
@@ -46,6 +47,7 @@ public class BlueTimeBall : MonoBehaviour
                         break;
                     } else if (buttonScript.correspondingBlockDoor2 == other.transform) {
                         buttonScript.isInBlue2 = true;
+                        isFound2 = true;
                         break;
                     }
                 }
@@ -83,7 +85,7 @@ public class BlueTimeBall : MonoBehaviour
                 if (isFound) {
                     buttonScript.isInBlue = false;
                 }
-                if (buttonScript.isInBlue2) {
+                if (isFound2) {
                     buttonScript.isInBlue2 = false;
                 }                
                 break;
