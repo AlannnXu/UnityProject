@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour
 {
+    public bool isEnd;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +15,13 @@ public class NextScene : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !isEnd)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        if (collision.gameObject.tag == "Player" && isEnd)
+        {
+            SceneManager.LoadScene("End");
         }
     }
 

@@ -131,8 +131,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1005238702}
   - component: {fileID: 1005238701}
-  - component: {fileID: 1005238700}
   - component: {fileID: 1005238699}
+  - component: {fileID: 1005238700}
   m_Layer: 0
   m_Name: screen
   m_TagString: Untagged
@@ -149,9 +149,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1005238698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5182a25048a2340b50c0a6327f55f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b811e18915b7ba449d05b1a76bf9a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStart: 0
 --- !u!328 &1005238700
 VideoPlayer:
   m_ObjectHideFlags: 0
