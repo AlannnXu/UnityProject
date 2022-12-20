@@ -1953,6 +1953,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &538794012 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1941987098, guid: 220fcd1e54a92f240b21b96560228b90,
+    type: 3}
+  m_PrefabInstance: {fileID: 1449167415}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &554829211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3223,6 +3229,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &948808890 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1922292912, guid: 220fcd1e54a92f240b21b96560228b90,
+    type: 3}
+  m_PrefabInstance: {fileID: 1449167415}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &959002845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4553,6 +4565,21 @@ PrefabInstance:
       propertyPath: deathSound
       value: 
       objectReference: {fileID: 1449167418}
+    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
+        type: 3}
+      propertyPath: shieldSound
+      value: 
+      objectReference: {fileID: 948808890}
+    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
+        type: 3}
+      propertyPath: timeSound
+      value: 
+      objectReference: {fileID: 538794012}
+    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
+        type: 3}
+      propertyPath: thunderSound
+      value: 
+      objectReference: {fileID: 2017751488}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8143030f543438b46840d25e1ae7e739, type: 3}
 --- !u!224 &1212774241 stripped
@@ -7684,6 +7711,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4428343673048463005, guid: 57aa0b6f084c2ed4690677e0b14ddd9b,
     type: 3}
   m_PrefabInstance: {fileID: 2016679306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2017751488 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1620080225, guid: 220fcd1e54a92f240b21b96560228b90,
+    type: 3}
+  m_PrefabInstance: {fileID: 1449167415}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2081921045
 GameObject:
