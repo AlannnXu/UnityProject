@@ -405,7 +405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67814577}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.237995, y: -4.6491327, z: -9.56}
+  m_LocalPosition: {x: -26.85947, y: -4.6409903, z: -9.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2037621449}
@@ -1294,6 +1294,21 @@ PrefabInstance:
       propertyPath: deathSound
       value: 
       objectReference: {fileID: 744731924}
+    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
+        type: 3}
+      propertyPath: shieldSound
+      value: 
+      objectReference: {fileID: 744731926}
+    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
+        type: 3}
+      propertyPath: timeSound
+      value: 
+      objectReference: {fileID: 744731925}
+    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
+        type: 3}
+      propertyPath: thunderSound
+      value: 
+      objectReference: {fileID: 744731927}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8143030f543438b46840d25e1ae7e739, type: 3}
 --- !u!1 &215492965
@@ -3054,6 +3069,24 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 744731923}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &744731925 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1941987098, guid: 220fcd1e54a92f240b21b96560228b90,
+    type: 3}
+  m_PrefabInstance: {fileID: 744731923}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &744731926 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1922292912, guid: 220fcd1e54a92f240b21b96560228b90,
+    type: 3}
+  m_PrefabInstance: {fileID: 744731923}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &744731927 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1620080225, guid: 220fcd1e54a92f240b21b96560228b90,
+    type: 3}
+  m_PrefabInstance: {fileID: 744731923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &747724262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3921,7 +3954,7 @@ PrefabInstance:
     - target: {fileID: 3426386752231777527, guid: 7a17db953d03201429a1f996c2214587,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5.33
+      value: -5.39
       objectReference: {fileID: 0}
     - target: {fileID: 3426386752231777527, guid: 7a17db953d03201429a1f996c2214587,
         type: 3}
@@ -10781,10 +10814,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPos: {fileID: 668525416}
+  playerScript: {fileID: 0}
   icon: {fileID: 56180107}
   diaBlock: {fileID: 1653062792}
   diaTextUI: {fileID: 737353209}
   diaText: {fileID: 0}
+  isFinish: 0
 --- !u!1001 &1641653749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12611,6 +12646,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3186183759213308729, guid: 7f4aac4e9e45dd344917c385608df2f4,
+        type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 668525416}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f4aac4e9e45dd344917c385608df2f4, type: 3}
 --- !u!224 &2116435331 stripped
