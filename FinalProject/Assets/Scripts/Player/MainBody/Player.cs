@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 
     [Header("身体部分")]
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private Transform shieldPrefab;
+    public Transform shieldPrefab;
     [SerializeField] private Transform rightHandPrefab;
     [SerializeField] private Transform leftHandPrefab;
 
@@ -47,8 +47,8 @@ public class Player : MonoBehaviour
 
     // 0-normal person;
     // 1-with shield;
-    // 2-have time slower;
-    // 3-exploding flash;
+    // 2,3-have time slower;
+    // 4,5-exploding flash;
     public int status = 1;
 
     [Header("投掷参数")]
@@ -86,6 +86,9 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         shieldPrefab.GetComponent<Collider2D>().enabled = false;
+        if (status == 0) {
+            shieldPrefab.gameObject.SetActive(false);
+        }
         haveShield = true;
         animator.Update(0f);
         animator.Play("0_idle");
@@ -112,7 +115,7 @@ public class Player : MonoBehaviour
             {
                 jumpPress = true;
             }
-            if (Input.GetKeyDown(KeyCode.J))
+            if (Input.GetKeyDown(KeyCode.J) &&( status % 2 == 1))
             {
                 shieldPress = true;
                 shieldSound.Play();
@@ -190,16 +193,7 @@ public class Player : MonoBehaviour
                 status--;
                 // shieldOut = true;
             }
-            // else
-            // {
-            //     haveShield = true;
-            //     GameObject outShield = GameObject.FindWithTag("shield");
-            //     outShield.transform.parent = rightHandPrefab;
-            //     outShield.transform.localPosition = Vector3.zero;
-            //     Destroy(outShield.GetComponent<Rigidbody2D>());
-            //     outShield.GetComponent<Collider2D>().enabled = false;
-            //     shieldOut = false;
-            // }
+
             shieldPress = false;
         }
     }
@@ -222,8 +216,10 @@ public class Player : MonoBehaviour
     }
         void isOnButtonCheck()
     {
+
         ////判断角色碰撞器与button图层发生接触
         GameObject outShield = GameObject.FindWithTag("shield");
+        if (outShield == null) return;
         if (Physics2D.OverlapCircle(groundCheck.position, 0.1f, buttonLayer) || Physics2D.OverlapCircle(outShield.transform.position, 0.4f, buttonLayer)) 
         {
             if (buttonScript != null) {
@@ -358,14 +354,7 @@ public class Player : MonoBehaviour
             keyNum--;
             Destroy(other.gameObject);
         } 
-        // else if (other.gameObject.tag == "platform") {
-        //     platformScript = other.gameObject.GetComponent<platformMove>();
-        //     if (platformScript.flag) {
-        //         Debug.Log("ssdczx");
-        //         transform.position = new Vector3(transform.position.x + platformScript.directionOfPlatform * platformScript.speed * Time.deltaTime * 2f,
-        //         transform.position.y, transform.position.z);
-        //     }
-        // }
+
     }
 
     public void OnCollisionStay2D(Collision2D other) {

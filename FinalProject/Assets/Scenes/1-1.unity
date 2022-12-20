@@ -8058,6 +8058,11 @@ PrefabInstance:
       propertyPath: thunderSound
       value: 
       objectReference: {fileID: 1791599624}
+    - target: {fileID: 6442907184579423024, guid: 8143030f543438b46840d25e1ae7e739,
+        type: 3}
+      propertyPath: status
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8143030f543438b46840d25e1ae7e739, type: 3}
 --- !u!224 &649133265 stripped
@@ -8247,10 +8252,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPos: {fileID: 649133265}
+  playerScript: {fileID: 1203298931}
   icon: {fileID: 784909231}
   diaBlock: {fileID: 1541473061}
   diaTextUI: {fileID: 793279821}
   diaText: {fileID: 0}
+  isFinish: 0
 --- !u!1001 &692132782
 PrefabInstance:
   m_ObjectHideFlags: 0
