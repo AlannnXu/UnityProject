@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 5332442445486077222}
   m_Layer: 16
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: thunderBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,9 +249,9 @@ GameObject:
   - component: {fileID: 6923541265186385936}
   - component: {fileID: 6923541265186385937}
   - component: {fileID: 6923541265186385951}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: explode
-  m_TagString: Untagged
+  m_TagString: thunderBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 4605725024449763680}
   - component: {fileID: 2531800883002658365}
   - component: {fileID: 913965108612068667}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LightningTail
   m_TagString: thunderBall
   m_Icon: {fileID: 0}
