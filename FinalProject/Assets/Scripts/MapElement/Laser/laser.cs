@@ -104,10 +104,13 @@ public class laser : MonoBehaviour
             {
                 hit.collider.GetComponent<Player>().PlayerDeath();
             }
-            else if(hit.collider.tag == "EnemyHead" || hit.collider.tag == "EnemyBody")
+            else if(hit.collider.tag == "EnemyBody")
             {
-                Debug.Log("dddddd");
+
                 hit.collider.GetComponent<EnemyMove>().enemyDeath();
+            }
+            else if (hit.collider.tag == "EnemyHead") {
+                hit.collider.gameObject.transform.parent.gameObject.GetComponent<EnemyMove>().enemyDeath();
             }
         }
         Debug.DrawLine(transform.position, hit.point, Color.red);

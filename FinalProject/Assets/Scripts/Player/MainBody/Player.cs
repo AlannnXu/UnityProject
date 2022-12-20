@@ -32,6 +32,10 @@ public class Player : MonoBehaviour
     public AudioSource RunSound;
     public AudioSource jumpSound;
     public AudioSource deathSound;
+    public AudioSource shieldSound;
+    public AudioSource timeSound;
+    public AudioSource thunderSound;
+
 
     [Header("移动参数")]
     public float speed = 5f;
@@ -111,13 +115,14 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.J))
             {
                 shieldPress = true;
-
+                shieldSound.Play();
                 effect1.SetActive(true);
                 Invoke("DestoryEffect1", effectTime);
             }
             if (status >= 2 && Input.GetKeyDown(KeyCode.K)) {
                 if (GameObject.FindWithTag("blueTimeBall") == null)
                 {
+                    timeSound.Play();
                     Instantiate(buleTimeBall, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), transform.rotation);
                     effect2.SetActive(true);
                     Invoke("DestoryEffect2", effectTime);
@@ -125,6 +130,7 @@ public class Player : MonoBehaviour
             }
             if (status >= 4 && Input.GetKeyDown(KeyCode.L)) {
                 if (GameObject.FindWithTag("thunderBall") == null) {
+                    thunderSound.Play();
                     if (transform.localScale.x < 0) {
                         Instantiate(thunderBall, rightHandPrefab.position + Vector3.up * 0.2f + Vector3.right * 1.1f, transform.rotation);
                     } else {
@@ -380,7 +386,7 @@ public class Player : MonoBehaviour
         } else if (other.gameObject.tag == "button") {
 
             buttonScript = other.gameObject.GetComponent<Buttons>();
-            if (buttonScript.correspondingBlockDoor != null && !buttonScript.isInBlue) {
+            if (buttonScript.correspondingBlockDoor != null && !buttonScript.isInBlue && !buttonScript.isInBlue2) {
                 if (!buttonScript.flag1) {
                     buttonScript.correspondingBlockDoor.position = new Vector3(buttonScript.correspondingBlockDoor.position.x, 
                         buttonScript.correspondingBlockDoor.position.y - buttonScript.DoorSpeed * Time.deltaTime, buttonScript.correspondingBlockDoor.position.z);
@@ -393,7 +399,7 @@ public class Player : MonoBehaviour
                     other.gameObject.transform.position.y - buttonScript.buttonSpeed * Time.deltaTime, other.gameObject.transform.position.z);         
                 buttonScript.forceStop = false;
             }
-            if (buttonScript.correspondingBlockDoor2 != null && !buttonScript.isInBlue2) {
+            if (buttonScript.correspondingBlockDoor2 != null && !buttonScript.isInBlue && !buttonScript.isInBlue2) {
                 if (!buttonScript.flag2) {
                     buttonScript.correspondingBlockDoor2.position = new Vector3(buttonScript.correspondingBlockDoor2.position.x,
                         buttonScript.correspondingBlockDoor2.position.y - buttonScript.DoorSpeed * Time.deltaTime, buttonScript.correspondingBlockDoor2.position.z);
