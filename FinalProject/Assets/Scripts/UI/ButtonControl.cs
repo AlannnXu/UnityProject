@@ -18,7 +18,7 @@ public class ButtonControl : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene("1-1");
+        SceneManager.LoadScene("Start");
     }
 
     public void Load11()
