@@ -18,6 +18,6 @@ public class ScreenControl : MonoBehaviour
     }
     public void SwitchTo11()
     {
-        SceneManager.LoadScene("1-1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
