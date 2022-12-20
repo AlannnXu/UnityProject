@@ -206,6 +206,7 @@ public class Player : MonoBehaviour
                 outShield.transform.parent = null;
                 outShield.AddComponent<Rigidbody2D>();
                 outShield.GetComponent<Rigidbody2D>().mass = 100;
+                outShield.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
                 if (transform.localScale.x > 0) {
                     outShield.GetComponent<Rigidbody2D>().velocity = new Vector2(-throwForce,outShield.GetComponent<Rigidbody2D>().velocity.y);
                 } else {
