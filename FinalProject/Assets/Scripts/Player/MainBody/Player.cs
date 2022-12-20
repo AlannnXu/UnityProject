@@ -107,7 +107,26 @@ public class Player : MonoBehaviour
         effect3.SetActive(false);
     }
 
-
+    public void skillSoundPlay(int ss) {
+        switch (ss) {
+            case 1:
+                shieldSound.Play();
+                effect1.SetActive(true);
+                Invoke("DestoryEffect1", effectTime);
+                break;
+            case 2:
+                timeSound.Play();
+                effect2.SetActive(true);
+                Invoke("DestoryEffect2", effectTime);
+                break;
+            case 3:
+                thunderSound.Play();
+                effect3.SetActive(true);
+                Invoke("DestoryEffect3", effectTime);
+                break;                                                
+        }
+            
+    }
     void Update()
     {
         if (!isDead) {
@@ -118,22 +137,27 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.J) &&( status % 2 == 1))
             {
                 shieldPress = true;
-                shieldSound.Play();
-                effect1.SetActive(true);
-                Invoke("DestoryEffect1", effectTime);
+                // shieldSound.Play();
+                // effect1.SetActive(true);
+                skillSoundPlay(1);
+                // Invoke("DestoryEffect1", effectTime);
             }
             if (status >= 2 && Input.GetKeyDown(KeyCode.K)) {
+
                 if (GameObject.FindWithTag("blueTimeBall") == null)
                 {
-                    timeSound.Play();
+                    // timeSound.Play();
                     Instantiate(buleTimeBall, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), transform.rotation);
-                    effect2.SetActive(true);
-                    Invoke("DestoryEffect2", effectTime);
+                    skillSoundPlay(2);
+                    // effect2.SetActive(true);
+                    // Invoke("DestoryEffect2", effectTime);
                 }
+
+
             }
             if (status >= 4 && Input.GetKeyDown(KeyCode.L)) {
                 if (GameObject.FindWithTag("thunderBall") == null) {
-                    thunderSound.Play();
+                    // thunderSound.Play();
                     if (transform.localScale.x < 0) {
                         Instantiate(thunderBall, rightHandPrefab.position + Vector3.up * 0.2f + Vector3.right * 1.1f, transform.rotation);
                     } else {
@@ -142,9 +166,9 @@ public class Player : MonoBehaviour
                     
                     thunderBallScript = GameObject.FindWithTag("thunderBall").GetComponent<ThunderBall>();
                     thunderBallScript.direction = -transform.localScale.x;
-
-                    effect3.SetActive(true);
-                    Invoke("DestoryEffect3", effectTime);
+                    skillSoundPlay(3);
+                    // effect3.SetActive(true);
+                    // Invoke("DestoryEffect3", effectTime);
                 }
                 
             }

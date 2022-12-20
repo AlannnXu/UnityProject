@@ -20,6 +20,7 @@ public class NPCController : MonoBehaviour
     private bool isTalking = false;
     private int index = 0;
     private int sceneNum;
+    private bool isNotFirstTime;
     private List<string> aDia = new List<string>();
     private List<string> hDia = new List<string>();
     private List<string> zDia = new List<string>();
@@ -110,11 +111,13 @@ public class NPCController : MonoBehaviour
             diaText.text = aDia[index];
             index++;
         }
-        else
+        else if (!isNotFirstTime)
         {
             isFinish = true;
             playerScript.shieldPrefab.gameObject.SetActive(true);
             playerScript.status++;
+            playerScript.skillSoundPlay(1);
+            isNotFirstTime = true;
         }
     }
 
@@ -127,9 +130,12 @@ public class NPCController : MonoBehaviour
             diaText.text = hDia[index];
             index++;
         }
-        else
+        else if (!isNotFirstTime)
         {
             isFinish = true;
+            playerScript.status = 3;
+            playerScript.skillSoundPlay(2);
+            isNotFirstTime = true;
         }
     }
 
@@ -142,9 +148,12 @@ public class NPCController : MonoBehaviour
             diaText.text = zDia[index];
             index++;
         }
-        else
+        else if (!isNotFirstTime)
         {
             isFinish = true;
+            playerScript.status = 5;
+            playerScript.skillSoundPlay(3);
+            isNotFirstTime = true;
         }
     }
 
