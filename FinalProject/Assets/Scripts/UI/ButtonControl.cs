@@ -69,5 +69,10 @@ public class ButtonControl : MonoBehaviour
     {
         SceneManager.LoadScene("Settings");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
     
 }
